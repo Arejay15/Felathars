@@ -9,6 +9,8 @@ public class playerController : MonoBehaviour
     [SerializeField] int HP;
     [SerializeField] int speed;
 
+    weapons.weaponTypes currWeapon;
+
     int originalHP;
 
     Vector3 moveDir;

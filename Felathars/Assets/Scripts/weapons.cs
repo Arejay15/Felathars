@@ -3,12 +3,11 @@ using UnityEngine;
 
 public class weapons : MonoBehaviour
 {
-    enum weaponTypes {game, film, music, art, writing}
+    public enum weaponTypes {game, film, music, art, writing}
 
     [SerializeField] weaponTypes type;
     [SerializeField] float fireRate;
     [SerializeField] int damage;
-    [Range(0.01f, 100)][SerializeField] float bulletSpeed;
     [Range(1,5)][SerializeField] int timeToDestroy;
 
 
