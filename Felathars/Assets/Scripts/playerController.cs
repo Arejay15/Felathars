@@ -5,13 +5,13 @@ using static UnityEngine.Rendering.DebugUI.Table;
 
 public class playerController : MonoBehaviour
 {
+
     [SerializeField] CharacterController controller;
-    [SerializeField] int HP;
-    [SerializeField] int speed;
+    [SerializeField] public int HP;
+    [SerializeField] public int speed;
 
-    weapons.weaponTypes currWeapon;
-
-    int originalHP;
+    public int originalHP;
+    public int tempHP;
 
     Vector3 moveDir;
 
@@ -21,6 +21,7 @@ public class playerController : MonoBehaviour
     void Start()
     {
         originalHP = HP;
+        tempHP = 0;
     }
 
     // Update is called once per frame
