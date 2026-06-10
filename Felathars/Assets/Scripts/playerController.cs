@@ -37,15 +37,8 @@ public class playerController : MonoBehaviour
 
     void movement()
     {
-        moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
-        controller.Move(moveDir * speed * Time.deltaTime);
-        //controller.Move(playerVel * Time.deltaTime);
+        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxis("Vertical") * Time.deltaTime * speed);
         Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
-
-        //Vector3 screenMousePos = Input.mousePosition;
-        //Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(screenMousePos);
-        //worldMousePos.y = 0f;
-        //Vector2 final2DPos = worldMousePos;
     }
 
     /*
@@ -65,16 +58,6 @@ public class playerController : MonoBehaviour
 
     void lookatmouse()
     {
-
-        /*Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        float rayLength;
-        if (groundPlane.Raycast(camRay, out rayLength)){
-            Vector3 pointToLook = camRay.GetPoint(rayLength);
-            Debug.DrawLine(camRay.origin, pointToLook, Color.yellow);
-            Quaternion rot = Quaternion.LookRotation(new Vector3(pointToLook.x, 0, pointToLook.z));
-                controller.transform.rotation = Quaternion.Lerp(controller.transform.rotation, rot, 5 * Time.deltaTime);
-        */
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
 
