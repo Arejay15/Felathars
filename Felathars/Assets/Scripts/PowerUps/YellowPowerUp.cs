@@ -7,7 +7,7 @@ public class YellowPowerUp : MonoBehaviour
     {
         if (other.isTrigger) return;
 
-        gamemanager.instance.playerScript.speed += 5;
+        //gamemanager.instance.playerScript.speed += 5;
         Destroy(gameObject);
     }
 
