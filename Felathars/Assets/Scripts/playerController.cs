@@ -7,6 +7,7 @@ public class playerController : MonoBehaviour
 {
 
     [SerializeField] CharacterController controller;
+    [SerializeField] GameObject playerModel;
     [SerializeField] public int HP;
     [SerializeField] public int speed;
 
@@ -39,7 +40,7 @@ public class playerController : MonoBehaviour
         moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
         controller.Move(moveDir * speed * Time.deltaTime);
         //controller.Move(playerVel * Time.deltaTime);
-        Debug.DrawRay(transform.position, transform.forward * 10, Color.red);
+        Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
 
         //Vector3 screenMousePos = Input.mousePosition;
         //Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(screenMousePos);
@@ -81,14 +82,14 @@ public class playerController : MonoBehaviour
         {
             // Intersection point on the ground
             Vector3 mousePos = camRay.GetPoint(hitDist);
-            Vector3 playerPos = transform.position;
+            Vector3 playerPos = playerModel.transform.position;
 
             Quaternion targetRot = Quaternion.LookRotation(mousePos - playerPos);
             targetRot.x = 0;
             targetRot.z = 0;
 
             float angle = lookSens * Time.deltaTime;
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, angle);
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, targetRot, angle);
         }
     }
 }
