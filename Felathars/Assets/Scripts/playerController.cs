@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] public int HP;
     [SerializeField] public int speed;
+    [SerializeField] weapons.weaponTypes type;
 
     public int originalHP;
     public int tempHP;
@@ -22,6 +23,7 @@ public class playerController : MonoBehaviour
     {
         originalHP = HP;
         tempHP = 0;
+        type = weapons.weaponTypes.game;
     }
 
     // Update is called once per frame

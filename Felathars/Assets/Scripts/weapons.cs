@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class weapons : MonoBehaviour
 {
-    public enum weaponTypes {game, film, music, art, writing}
+   public enum weaponTypes {game, film, music, art, writing}
 
     [SerializeField] weaponTypes type;
     [SerializeField] float fireRate;
@@ -16,7 +16,7 @@ public class weapons : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        type = weaponTypes.game;
+       
     }
 
     // Update is called once per frame
@@ -25,14 +25,5 @@ public class weapons : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.isTrigger) return;
-
-        IDamage dmg = other.GetComponent<IDamage>();
-        if (dmg != null)
-        {
-            dmg.takeDamage(damage);
-        }
-    }
+    
 }
