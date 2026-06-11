@@ -321,7 +321,7 @@ MonoBehaviour:
   faceTargetSpeed: 5
   StoppingDistance: 5
   Distance: 8
-  bullet: {fileID: 0}
+  bullet: {fileID: 42337391047625840, guid: 5461ffa19c309754fbf66ae9ae61e113, type: 3}
   gunPivot: {fileID: 1978975089}
   shootPos: {fileID: 54464833}
   shootRate: 0.756
