@@ -2,6 +2,7 @@ using UnityEngine;
 
 public interface IDamage
 {
-   public void TakeDamage(float amount);
+   
+    void takeDamage(float amount);
 
 }
