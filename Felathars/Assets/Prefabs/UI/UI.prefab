@@ -3795,6 +3795,9 @@ MonoBehaviour:
   menuPause: {fileID: 5089807180557715763}
   menuClear: {fileID: 2724168346825188329}
   menuLose: {fileID: 7439570952761019524}
+  gameGoalCountText: {fileID: 5713566467177710134}
+  playerHPBar: {fileID: 5557534454969712385}
+  playerDamageFlash: {fileID: 1404164341420624150}
   isPaused: 0
   player: {fileID: 0}
   playerScript: {fileID: 0}
