@@ -10,6 +10,7 @@ public class BluePowerUp : MonoBehaviour
        if(other.isTrigger) return;
 
         gamemanager.instance.playerScript.damageReduction += 5;
+        gamemanager.instance.playerReductionBar.gameObject.SetActive(true);
         Destroy(powerUp);
     }
 }
