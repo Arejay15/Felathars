@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
@@ -34,6 +35,7 @@ public class playerController : MonoBehaviour, IDamage
         originalHP = HP;
         tempHP = 0;
         type = weapons.weaponTypes.game;
+        updatePlayerUI();
     }
 
     // Update is called once per frame
@@ -97,6 +99,19 @@ public class playerController : MonoBehaviour, IDamage
     public void takeDamage(float amount)
     {
         HP -= amount;
+        updatePlayerUI();
+        StartCoroutine(flashDamage());
+
+        if (HP <= 0)
+        {
+            // Hey I'm Dead
+            gamemanager.instance.youLose();
+        }
+    }
+
+    public void updatePlayerUI()
+    {
+        gamemanager.instance.playerHPBar.fillAmount = (float)HP / originalHP;
     }
 
     void shoot()
@@ -112,7 +127,12 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-
+    IEnumerator flashDamage()
+    {
+        gamemanager.instance.playerDamageFlash.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gamemanager.instance.playerDamageFlash.SetActive(false);
+    }
 }
 
 
