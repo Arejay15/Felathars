@@ -3,16 +3,24 @@ using UnityEngine;
 using UnityEngine.InputSystem.XR;
 using static UnityEngine.Rendering.DebugUI.Table;
 
-public class playerController : MonoBehaviour
+public class playerController : MonoBehaviour, IDamage
 {
+    [SerializeField] LayerMask ignoreLayer;
 
     [SerializeField] CharacterController controller;
     [SerializeField] GameObject playerModel;
-    [SerializeField] public int HP;
+    [SerializeField] public float HP;
     [SerializeField] public int speed;
     [SerializeField] weapons.weaponTypes type;
+    [SerializeField] float shootRate;
+    [SerializeField] float damageAmount;
+    [SerializeField] int shootDist;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform shootPos;
+    [SerializeField] Transform gunPivot;
 
-    public int originalHP;
+    float shootTimer;
+    public float originalHP;
     public int tempHP;
 
     Vector3 moveDir;
@@ -39,8 +47,15 @@ public class playerController : MonoBehaviour
 
     void movement()
     {
+        shootTimer += Time.deltaTime;
+
         transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxis("Vertical") * Time.deltaTime * speed);
         Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
+
+        if (Input.GetButton("Fire1") && shootTimer > shootRate)
+        {
+            shoot();
+        }
     }
 
     /*
@@ -77,6 +92,26 @@ public class playerController : MonoBehaviour
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, targetRot, angle);
         }
     }
+
+    public void takeDamage(float amount)
+    {
+        HP -= amount;
+    }
+
+    void shoot()
+    {
+        shootTimer = 0;
+
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, shootDist, ~ignoreLayer))
+        {
+            Debug.Log(hit.collider.name);
+
+            Instantiate(bullet, shootPos.position, gunPivot.rotation);
+        }
+    }
+
+
 }
 
 
