@@ -12,6 +12,8 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] GameObject playerModel;
     [SerializeField] public float HP;
     [SerializeField] public int speed;
+    [SerializeField] public int sprintMod;
+    [SerializeField] gamemanager.ColorType defensiveColor;
     [SerializeField] weapons.weaponTypes type;
     [SerializeField] float shootRate;
     [SerializeField] float damageAmount;
@@ -45,14 +47,15 @@ public class playerController : MonoBehaviour, IDamage
 
         movement();
 
-        //sprint(); available as an upgrade?
+        sprint(); //available as an upgrade?
     }
 
     void movement()
     {
         shootTimer += Time.deltaTime;
 
-        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxis("Vertical") * Time.deltaTime * speed);
+        moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
+        controller.Move(moveDir * speed * Time.deltaTime); 
         Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
 
         if (Input.GetButton("Fire1") && shootTimer > shootRate)
@@ -61,7 +64,7 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-    /*
+    
     
     void sprint()
     {
@@ -74,7 +77,7 @@ public class playerController : MonoBehaviour, IDamage
             speed /= sprintMod;
         }
     }
-    */
+    
 
     void lookatmouse()
     {
@@ -96,9 +99,9 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-    public void takeDamage(float amount)
+    public void takeDamage(float amount, gamemanager.ColorType dmgColor)
     {
-        HP -= amount;
+        HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
         updatePlayerUI();
         StartCoroutine(flashDamage());
 
@@ -119,14 +122,8 @@ public class playerController : MonoBehaviour, IDamage
     void shoot()
     {
         shootTimer = 0;
-
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, shootDist, ~ignoreLayer))
-        {
-            Debug.Log(hit.collider.name);
-
-            Instantiate(bullet, shootPos.position, gunPivot.rotation);
-        }
+        Instantiate(bullet, shootPos.position, gunPivot.rotation);
+        
     }
 
     IEnumerator flashDamage()

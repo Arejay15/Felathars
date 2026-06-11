@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7785668519648061134}
   - component: {fileID: 7499337267644187894}
   m_Layer: 0
-  m_Name: musicBullets
+  m_Name: RedBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,11 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7c50c06be449c49aa73ec9f252c935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damage
-  damageType: 2
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  dmgColor: 1
   rb: {fileID: 7785668519648061134}
-  damageAmount: 2
+  damageAmount: 7.5
   damageRate: 0.1
-  bulletSpeed: 1
+  bulletSpeed: 30
   bulletDestroyTime: 3
 --- !u!135 &7590431305559600124
 SphereCollider:

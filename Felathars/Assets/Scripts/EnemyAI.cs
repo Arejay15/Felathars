@@ -5,10 +5,10 @@ using Unity.VisualScripting;
 public class EnemyAI : MonoBehaviour, IDamage
 {
 
-    enum EnemyTypes { Grey, Red, Green, Blue, Yellow } // Different types of enemies, which will be set in the inspector
     // Enemy stats
     [Header("Enemy Configuration")]
-    [SerializeField] EnemyTypes type;
+    [SerializeField] gamemanager.ColorType defensiveColor;
+
 
 
     [Header("Components")]
@@ -16,11 +16,9 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] NavMeshAgent agent;
 
     [Header("Stats")]
-    [Range(1, 10), SerializeField] float HP;
+    [SerializeField] float HP;
     [Range(1, 10), SerializeField] int faceTargetSpeed;
-    [Range(1, 10), SerializeField] int StoppingDistance;
-    [Range(1, 10), SerializeField] int Distance;
-
+    
 
     [Header("Weapon")]
     [SerializeField] GameObject bullet;
@@ -46,7 +44,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         colorOrig = model.material.color;
 
-        //gamemanager.instance.updateGameGoal(1);
+        gamemanager.instance.updateGameGoal(1);
 
         playerTransform = gamemanager.instance.player.transform;
 
@@ -57,8 +55,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         if (playerInTrigger && canSeePlayer())
         {
-            if (Distance > StoppingDistance)
-                agent.SetDestination(gamemanager.instance.player.transform.position);
+            
+            agent.SetDestination(gamemanager.instance.player.transform.position);
 
             faceTarget();
             rotateGun();
@@ -140,9 +138,9 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
     }
 
-    public void takeDamage(float amount)
+    public void takeDamage(float amount, gamemanager.ColorType dmgColor)
     {
-        HP -= amount;
+        HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
 
         if (HP <= 0)
         {
