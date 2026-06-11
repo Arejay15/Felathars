@@ -13,7 +13,9 @@ public class playerController : MonoBehaviour
     [SerializeField] weapons.weaponTypes type;
 
     public int originalHP;
+
     public int tempHP;
+    public int damageReduction;
 
     Vector3 moveDir;
 

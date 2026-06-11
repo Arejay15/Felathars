@@ -7,7 +7,7 @@ public class damage : MonoBehaviour
     [SerializeField] damageTypes damageType;
     [SerializeField] Rigidbody rb;
 
-    [SerializeField] int damageAmount;
+    [SerializeField] public int damageAmount;
     [SerializeField] float damageRate;
     [SerializeField] float bulletSpeed;
     [SerializeField] int bulletDestroyTime;
