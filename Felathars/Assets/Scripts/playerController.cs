@@ -19,6 +19,7 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] Transform shootPos;
     [SerializeField] Transform gunPivot;
 
+    public int damageReduction;
     float shootTimer;
     public float originalHP;
     public int tempHP;
