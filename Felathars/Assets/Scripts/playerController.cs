@@ -39,7 +39,8 @@ public class playerController : MonoBehaviour
 
     void movement()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxis("Vertical") * Time.deltaTime * speed);
+        moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
+        controller.Move(moveDir * speed * Time.deltaTime);
         Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
     }
 
