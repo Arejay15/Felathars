@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class gamemanager : MonoBehaviour
 {
@@ -9,6 +11,16 @@ public class gamemanager : MonoBehaviour
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuClear;
     [SerializeField] GameObject menuLose;
+    [SerializeField] TMP_Text gameGoalCountText;
+
+
+    public Image playerHPBar;
+    public Image playerTempHPBar;
+    public Image playerReductionBar;
+    public Image whiteKey;
+    public GameObject playerDamageFlash;
+    public GameObject yellowPowerOverlay;
+    public GameObject strengthUpOverlay;
 
     public bool isPaused;
     public GameObject player;
@@ -62,6 +74,7 @@ public class gamemanager : MonoBehaviour
     public void updateGameGoal(int amount)
     {
         gameGoalCount += amount;
+        gameGoalCountText.text = gameGoalCount.ToString("F0");
 
         if (gameGoalCount <= 0)
         {
@@ -77,5 +90,86 @@ public class gamemanager : MonoBehaviour
         statePause();
         menuActive = menuLose;
         menuActive.SetActive(true);
+    }
+
+    public enum ColorType { WHITE, RED, GREEN, BLUE, YELLOW, TRUE }
+    public static float damageCalc(float damage, ColorType offense, ColorType defense)
+    {
+        switch (defense)
+        {
+            case ColorType.WHITE:
+                switch (offense)
+                {
+                    
+                    case ColorType.RED:
+                        return (float)(damage * 1.15);
+                    case ColorType.GREEN:
+                        return (float)(damage * 1.15);
+                    case ColorType.BLUE:
+                        return (float)(damage * 1.15);
+                    case ColorType.YELLOW:
+                        return (float)(damage * 0.25);
+                    default:
+                        return damage;
+                }
+            case ColorType.RED:
+                switch (offense)
+                {
+                    case ColorType.WHITE:
+                        return (float)(damage * 0.75);
+                    case ColorType.GREEN:
+                        return (float)(damage * 0.5);
+                    case ColorType.BLUE:
+                        return (float)(damage * 1.5);
+                    case ColorType.YELLOW:
+                        return (float)(damage * 1.25);
+                    default:
+                        return damage;
+                }
+            case ColorType.GREEN:
+                switch (offense)
+                {
+                    case ColorType.WHITE:
+                        return (float)(damage * 0.75);
+                    case ColorType.BLUE:
+                        return (float)(damage * 0.5);
+                    case ColorType.RED:
+                        return (float)(damage * 1.5);
+                    case ColorType.YELLOW:
+                        return (float)(damage * 1.25);
+                    default:
+                        return damage;
+                }
+            case ColorType.BLUE:
+                switch (offense)
+                {
+                    case ColorType.WHITE:
+                        return (float)(damage * 0.75);
+                    case ColorType.RED:
+                        return (float)(damage * 0.5);
+                    case ColorType.GREEN:
+                        return (float)(damage * 1.5);
+                    case ColorType.YELLOW:
+                        return (float)(damage * 1.25);
+                    default:
+                        return damage;
+                }
+            case ColorType.YELLOW:
+                switch (offense)
+                {
+                    case ColorType.WHITE:
+                        return (float)(damage * 2.0);
+                    case ColorType.RED:
+                        return (float)(damage * 0.85);
+                    case ColorType.GREEN:
+                        return (float)(damage * 0.85);
+                    case ColorType.BLUE:
+                        return (float)(damage * 0.85);
+                    default:
+                        return damage;
+                }
+            default:
+                return damage;
+        }
     }
 }

@@ -5,81 +5,98 @@ using Unity.VisualScripting;
 public class EnemyAI : MonoBehaviour, IDamage
 {
 
-    enum EnemyTypes { Grey, Red, Green, Blue, Yellow } // Different types of enemies, which will be set in the inspector
     // Enemy stats
     [Header("Enemy Configuration")]
-    [SerializeField] EnemyTypes type;
+    [SerializeField] gamemanager.ColorType defensiveColor;
 
-    [Header("Enemy Stats")] // Stats for each type of enemy, which will be set in the inspector
-    [SerializeField] int Health; // Health of the enemy
-    [SerializeField] int Damage; // Damage dealt to the player when the enemy attacks
-    [SerializeField] float Speed; // How fast the enemy moves
-    [SerializeField] float detectRange; // How far the enemy can detect the player
-    [Range(1, 10), SerializeField] float faceTarget; // How fast the enemy turns to face the player
 
-    Vector3 playerDir; // Direction from the enemy to the player
 
-    bool playerInTrigger; // Whether the player is within the enemy's detection range
+    [Header("Components")]
+    [SerializeField] Renderer model;
+    [SerializeField] NavMeshAgent agent;
 
-    NavMeshAgent Agent; // Reference used for pathfinding and movement
+    [Header("Stats")]
+    [SerializeField] float HP;
+    [Range(1, 10), SerializeField] int faceTargetSpeed;
+    
 
-    Renderer Model; // Reference to the enemy's model renderer
+    [Header("Weapon")]
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gunPivot;
+    [SerializeField] Transform shootPos;
+    [Range(0.1f, 2f), SerializeField] float shootRate;
+    [Range(1, 10), SerializeField] int gunRotateSpeed;
 
-    Color enemyColor; // Color of the enemy
+    Color colorOrig;
+
+    Vector3 playerDir;
+
+    bool playerInTrigger;
+    float shootTimer;
+
+    float angleToPlayer;
+
+    Transform playerTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
-        enemyColor = type switch // Set the enemy color based on the enemy type using a switch expression
-        {
-            EnemyTypes.Grey => Color.gray, // Set the enemy color to gray if the enemy type is Grey, etc. for the other enemy types
-            EnemyTypes.Red => Color.red,
-            EnemyTypes.Green => Color.green,
-            EnemyTypes.Blue => Color.blue,
-            EnemyTypes.Yellow => Color.yellow,
-            _ => Color.white // Set the enemy color to white if the enemy type is not recognized
-        };
+        colorOrig = model.material.color;
+
+        gamemanager.instance.updateGameGoal(1);
+
+        playerTransform = gamemanager.instance.player.transform;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerInTrigger && canSeePlayer()) // if the player is within the enemy's detection range and the enemy can see the player,
+        if (playerInTrigger && canSeePlayer())
         {
-            // Set the enemy's destination to the player's position using the NavMeshAgent
+            
+            agent.SetDestination(gamemanager.instance.player.transform.position);
 
-            Agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
+            faceTarget();
+            rotateGun();
+
+            if (shootTimer > shootRate)
+            {
+                shoot();
+            }
+
 
         }
     }
-
-    public void takeDamage(float amount)
-    {
-
-    }
+    
 
     bool canSeePlayer()
     {
+        if (playerTransform == null)
+        
+            return false;
+        
 
+        shootTimer += Time.deltaTime;
+        playerDir = gamemanager.instance.player.transform.position - transform.position;
+        angleToPlayer = Vector3.Angle(playerDir, transform.forward);
 
-        Debug.DrawRay(transform.position, playerDir, Color.red); // Draw a ray from the enemy to the player for debugging purposes
+        Debug.DrawRay(transform.position, playerDir);
 
-        RaycastHit hit; // Variable to store the information about the raycast hit
+        RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, playerDir, out hit)) // Perform a raycast, and store the hit information in the 'hit' variable
+        if (Physics.Raycast(transform.position, playerDir, out hit))
         {
 
-            if (hit.collider.CompareTag("Player") && faceTarget < detectRange) // Check if the raycast hit the player, and if the player is within the enemy's detection range
+            if (hit.collider.CompareTag("Player"))
             {
 
+                
 
-                Agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
-
+                return true;
 
             }
-
 
         }
 
@@ -87,7 +104,62 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     }
 
+    void shoot()
+    {
+        shootTimer = 0;
+        Instantiate(bullet, shootPos.position, gunPivot.rotation);
+    }
 
+    void faceTarget()
+    {
+        Quaternion rot = Quaternion.LookRotation(new Vector3(playerDir.x, 0, playerDir.z));
+        transform.rotation = Quaternion.Lerp(transform.rotation, rot, faceTargetSpeed * Time.deltaTime);
+    }
 
+    void rotateGun()
+    {
+        Quaternion rot = Quaternion.LookRotation(playerDir);
+        gunPivot.rotation = Quaternion.Lerp(gunPivot.rotation, rot, Time.deltaTime * gunRotateSpeed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInTrigger = false;
+        }
+    }
+
+    public void takeDamage(float amount, gamemanager.ColorType dmgColor)
+    {
+        HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+
+        if (HP <= 0)
+        {
+            gamemanager.instance.updateGameGoal(-1);
+            Destroy(gameObject);
+        }
+        else
+        {
+            StartCoroutine(flashRed());
+        }
+    }
+
+    IEnumerator flashRed()
+    {
+        model.material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        model.material.color = colorOrig;
+    }
 
 }
+
+

@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
@@ -11,6 +12,8 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] GameObject playerModel;
     [SerializeField] public float HP;
     [SerializeField] public int speed;
+    [SerializeField] public int sprintMod;
+    [SerializeField] gamemanager.ColorType defensiveColor;
     [SerializeField] weapons.weaponTypes type;
     [SerializeField] float shootRate;
     [SerializeField] float damageAmount;
@@ -19,6 +22,7 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] Transform shootPos;
     [SerializeField] Transform gunPivot;
 
+    public int damageReduction;
     float shootTimer;
     public float originalHP;
     public int tempHP;
@@ -33,6 +37,7 @@ public class playerController : MonoBehaviour, IDamage
         originalHP = HP;
         tempHP = 0;
         type = weapons.weaponTypes.game;
+        updatePlayerUI();
     }
 
     // Update is called once per frame
@@ -42,14 +47,15 @@ public class playerController : MonoBehaviour, IDamage
 
         movement();
 
-        //sprint(); available as an upgrade?
+        sprint(); //available as an upgrade?
     }
 
     void movement()
     {
         shootTimer += Time.deltaTime;
 
-        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxis("Vertical") * Time.deltaTime * speed);
+        moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
+        controller.Move(moveDir * speed * Time.deltaTime); 
         Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
 
         if (Input.GetButton("Fire1") && shootTimer > shootRate)
@@ -58,7 +64,7 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-    /*
+    
     
     void sprint()
     {
@@ -71,7 +77,7 @@ public class playerController : MonoBehaviour, IDamage
             speed /= sprintMod;
         }
     }
-    */
+    
 
     void lookatmouse()
     {
@@ -93,25 +99,39 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-    public void takeDamage(float amount)
+    public void takeDamage(float amount, gamemanager.ColorType dmgColor)
     {
-        HP -= amount;
+        HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+        updatePlayerUI();
+        StartCoroutine(flashDamage());
+
+        if (HP <= 0)
+        {
+            // Hey I'm Dead
+            gamemanager.instance.youLose();
+        }
+    }
+
+    public void updatePlayerUI()
+    {
+        gamemanager.instance.playerHPBar.fillAmount = (float)HP / originalHP;
+        gamemanager.instance.playerReductionBar.fillAmount = (float)HP / originalHP;
+        gamemanager.instance.playerTempHPBar.fillAmount = (float)tempHP / originalHP;
     }
 
     void shoot()
     {
         shootTimer = 0;
-
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, shootDist, ~ignoreLayer))
-        {
-            Debug.Log(hit.collider.name);
-
-            Instantiate(bullet, shootPos.position, gunPivot.rotation);
-        }
+        Instantiate(bullet, shootPos.position, gunPivot.rotation);
+        
     }
 
-
+    IEnumerator flashDamage()
+    {
+        gamemanager.instance.playerDamageFlash.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gamemanager.instance.playerDamageFlash.SetActive(false);
+    }
 }
 
 

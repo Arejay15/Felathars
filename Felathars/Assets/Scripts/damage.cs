@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class damage : MonoBehaviour
 {
+    [SerializeField] LayerMask ignoreLayer;
 
-    enum damageTypes { game, film, music, art, writing }
-    [SerializeField] damageTypes damageType;
+    [SerializeField] gamemanager.ColorType dmgColor;
     [SerializeField] Rigidbody rb;
 
     [SerializeField] float damageAmount;
@@ -27,93 +27,14 @@ public class damage : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.isTrigger) return;
+        if (other.isTrigger || other.gameObject.layer == ignoreLayer) return;
 
         IDamage dmg = other.GetComponent<IDamage>();
-        damageTypes defType = other.GetComponent<damageTypes>();
-
+        
         if (dmg != null)
         {
-            switch (damageType)
-            {
-                case damageTypes.game:
-                    if (defType == damageTypes.writing)
-                    {
-                        dmg.takeDamage(damageAmount * 2);
-                    }
-                    else
-                    {
-                        dmg.takeDamage(damageAmount);
-                    }
-                    Destroy(gameObject);
-                    break;
-
-                case damageTypes.music:
-
-                    if (defType == damageTypes.film)
-                    {
-                        dmg.takeDamage(damageAmount * 2);
-                    }
-                    else if (defType == damageTypes.art)
-                    {
-                        dmg.takeDamage(damageAmount / 2);
-                    }
-                    else
-                    {
-                        dmg.takeDamage(damageAmount);
-                    }
-                    Destroy(gameObject);
-                    break;
-
-                case damageTypes.film:
-
-                    if (defType == damageTypes.art)
-                    {
-                        dmg.takeDamage(damageAmount * 2);
-                    }
-                    else if (defType == damageTypes.music)
-                    {
-                        dmg.takeDamage(damageAmount / 2);
-                    }
-                    dmg.takeDamage(damageAmount);
-                    Destroy(gameObject);
-                    break;
-
-                case damageTypes.art:
-
-                    if (defType == damageTypes.music)
-                    {
-                        dmg.takeDamage(damageAmount * 2);
-                    }
-                    else if (defType == damageTypes.film)
-                    {
-                        dmg.takeDamage(damageAmount / 2);
-                    }
-                    else
-                    {
-                        dmg.takeDamage(damageAmount);
-                    }
-                    Destroy(gameObject);
-                    break;
-                case damageTypes.writing:
-
-                    if (defType == damageTypes.game)
-                    {
-                        dmg.takeDamage(damageAmount / 4);
-                    }
-                    else
-                    {
-                        dmg.takeDamage(damageAmount * 2);
-                    }
-                    Destroy(gameObject);
-
-
-                    break;
-
-                default:
-
-                    break;
-            }
+            dmg.takeDamage(damageAmount, dmgColor);
         }
+        Destroy(gameObject);
     }
 }
