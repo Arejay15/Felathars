@@ -15,7 +15,7 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] public int sprintMod;
     [SerializeField] gamemanager.ColorType defensiveColor;
     [SerializeField] weapons.weaponTypes type;
-    [SerializeField] float shootRate;
+    [SerializeField] public float shootRate;
     [SerializeField] float damageAmount;
     [SerializeField] int shootDist;
     [SerializeField] GameObject bullet;
