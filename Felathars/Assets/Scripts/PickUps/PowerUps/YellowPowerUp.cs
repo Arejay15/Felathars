@@ -9,7 +9,7 @@ public class YellowPowerUp : MonoBehaviour
         if (other.isTrigger) return;
 
         gamemanager.instance.playerScript.speed += 5;
-        gamemanager.instance.yellowPowerOverlay.SetActive(true);
+        gamemanager.instance.player.GetComponent<TrailRenderer>().enabled = true;
         Destroy(powerUp);
     }
 
