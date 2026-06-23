@@ -1,0 +1,60 @@
+using System.Collections;
+using UnityEngine;
+
+public class laser : MonoBehaviour
+{
+    [SerializeField] LineRenderer laserLine;
+
+    [SerializeField] GameObject hitEffect;
+    [SerializeField] Transform laserStartPos;
+
+    [SerializeField] int damageAmount;
+    [SerializeField] float damageRate;
+    [SerializeField] int laserDist;
+
+    bool isDamaging;
+
+    // Update is called once per frame
+    void Update()
+    {
+        createLaser();
+    }
+
+    void createLaser()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(laserStartPos.position, laserStartPos.forward, out hit, laserDist))
+        {
+            laserLine.SetPosition(0, laserStartPos.position);
+            laserLine.SetPosition(1, hit.point);
+            hitEffect.SetActive(true);
+            hitEffect.transform.position = hit.point;
+
+            IDamage dmg = hit.collider.GetComponent<IDamage>();
+
+            if (dmg != null && !isDamaging)
+            {
+                StartCoroutine(damageTime(dmg));
+            }
+        }
+        else
+        {
+            laserLine.SetPosition(0, laserStartPos.position);
+            laserLine.SetPosition(1, laserStartPos.position + laserStartPos.forward * laserDist);
+            hitEffect.SetActive(false);
+        }
+    }
+
+    IEnumerator damageTime(IDamage d)
+    {
+        isDamaging = true;
+        d.takeDamage(damageAmount,gamemanager.ColorType.RED);
+        yield return new WaitForSeconds(damageRate);
+        isDamaging = false;
+    }
+    public void Damage(int amount)
+    {
+        Destroy(gameObject);
+    }
+}
