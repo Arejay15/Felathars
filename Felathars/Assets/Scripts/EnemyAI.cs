@@ -9,8 +9,6 @@ public class EnemyAI : MonoBehaviour, IDamage
     [Header("Enemy Configuration")]
     [SerializeField] gamemanager.ColorType defensiveColor;
 
-
-
     [Header("Components")]
     [SerializeField] Renderer model;
     [SerializeField] NavMeshAgent agent;
@@ -66,17 +64,14 @@ public class EnemyAI : MonoBehaviour, IDamage
                 shoot();
             }
 
-
         }
     }
     
-
     bool canSeePlayer()
     {
         if (playerTransform == null)
         
             return false;
-        
 
         shootTimer += Time.deltaTime;
         playerDir = gamemanager.instance.player.transform.position - transform.position;
@@ -91,8 +86,6 @@ public class EnemyAI : MonoBehaviour, IDamage
 
             if (hit.collider.CompareTag("Player"))
             {
-
-                
 
                 return true;
 
@@ -161,5 +154,3 @@ public class EnemyAI : MonoBehaviour, IDamage
     }
 
 }
-
-
