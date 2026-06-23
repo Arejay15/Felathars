@@ -2,14 +2,37 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] GameObject Model;
+    [SerializeField] GameObject doorModel;
+    [SerializeField] GameObject doorButton;
     [SerializeField] public bool Locked = false;
+
+    bool inTrigger = false;
+
+    public bool hasKey = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !Locked)
         {
-            Model.SetActive(false);
+            doorModel.SetActive(false);
+        }
+        else if(other.CompareTag("Player") && hasKey)
+        {
+            doorButton.SetActive(true);
+        }
+        inTrigger = true;
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Interact") && hasKey && inTrigger)
+        {
+
+            UnlockDoor();
+            doorModel.SetActive(false);
+            doorButton.SetActive(false);
+            hasKey = false;
+            gamemanager.instance.whiteKey.gameObject.SetActive(false);
         }
     }
 
@@ -17,7 +40,8 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Model.SetActive(true);
+            doorModel.SetActive(true);
+            doorButton.SetActive(false);
         }
     }
 

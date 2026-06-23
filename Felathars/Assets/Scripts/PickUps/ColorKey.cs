@@ -12,7 +12,7 @@ public class ColoredKeys : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             gamemanager.instance.whiteKey.gameObject.SetActive(true);
-            Door.UnlockDoor();
+            Door.hasKey = true;
             Destroy(Key);
         }
 
