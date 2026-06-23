@@ -25,7 +25,7 @@ public class playerController : MonoBehaviour, IDamage
     public int damageReduction;
     float shootTimer;
     public float originalHP;
-    public int tempHP;
+    public float tempHP;
 
     Vector3 moveDir;
 
@@ -101,7 +101,19 @@ public class playerController : MonoBehaviour, IDamage
 
     public void takeDamage(float amount, gamemanager.ColorType dmgColor)
     {
-        HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+        if(tempHP != 0)
+        {
+            tempHP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+            if (tempHP < 0)
+            {
+                HP -= tempHP;
+                tempHP = 0;
+            }
+        }
+        else
+        {
+            HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+        }
         updatePlayerUI();
         StartCoroutine(flashDamage());
 
