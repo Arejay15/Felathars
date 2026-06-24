@@ -16,11 +16,8 @@ public class gamemanager : MonoBehaviour
 
     public Image playerHPBar;
     public Image playerTempHPBar;
-    public Image playerReductionBar;
     public Image whiteKey;
     public GameObject playerDamageFlash;
-    public GameObject yellowPowerOverlay;
-    public GameObject strengthUpOverlay;
 
     public bool isPaused;
     public GameObject player;

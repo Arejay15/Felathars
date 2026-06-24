@@ -185,7 +185,6 @@ public class playerController : MonoBehaviour, IDamage
     public void updatePlayerUI()
     {
         gamemanager.instance.playerHPBar.fillAmount = (float)HP / originalHP;
-        gamemanager.instance.playerReductionBar.fillAmount = (float)HP / originalHP;
         gamemanager.instance.playerTempHPBar.fillAmount = (float)tempHP / originalHP;
     }
 
@@ -194,7 +193,7 @@ public class playerController : MonoBehaviour, IDamage
         shootTimer = 0;
         switch (activeGun.mode) {
             case weapons.Mode.Burst:
-                burstshot();
+                StartCoroutine(burstshot());
                 break;
             case weapons.Mode.Spread:
 
