@@ -53,9 +53,9 @@ MonoBehaviour:
   dmgColor: 0
   rb: {fileID: 5547976092747983148}
   damageAmount: 10
-  damageRate: 1
-  bulletSpeed: 0.1
-  bulletDestroyTime: 3
+  damageRate: 7
+  bulletSpeed: 8
+  bulletDestroyTime: 20
 --- !u!135 &1731784406535598811
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ TrailRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Time: 0.1
-  m_PreviewTimeScale: 0.5
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1

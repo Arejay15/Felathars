@@ -55,7 +55,7 @@ MonoBehaviour:
   damageAmount: 20
   damageRate: 2
   bulletSpeed: 1.5
-  bulletDestroyTime: 15
+  bulletDestroyTime: 12
 --- !u!135 &8357147077974589913
 SphereCollider:
   m_ObjectHideFlags: 0
