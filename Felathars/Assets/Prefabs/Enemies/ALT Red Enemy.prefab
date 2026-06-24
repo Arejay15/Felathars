@@ -488,7 +488,7 @@ Transform:
   m_GameObject: {fileID: 8220663733307839081}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2, y: 1, z: -3.82484}
+  m_LocalPosition: {x: -10.37, y: 0.77252, z: -3.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ffa43a53a2a854c9cf7af56b546ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  defensiveColor: 0
+  defensiveColor: 1
   indicatorPrefab: {fileID: 6881490779329181580, guid: 5616dad97409f3f4fa674503682c7e5c, type: 3}
   model: {fileID: 2854174552271064535}
   agent: {fileID: 1590240050407152520}
@@ -516,7 +516,7 @@ MonoBehaviour:
   bullet: {fileID: 5708153797088637581, guid: ff88a16858bd2a94a9182933840d81ae, type: 3}
   gunPivot: {fileID: 6413128415737168274}
   shootPos: {fileID: 3312624827894073850}
-  shootRate: 0.15
+  shootRate: 0.25
   gunRotateSpeed: 2
 --- !u!135 &1816917509060922728
 SphereCollider:
