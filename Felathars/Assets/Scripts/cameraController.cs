@@ -30,7 +30,7 @@ public class cameraController : MonoBehaviour
             Vector3 playerPos = player.transform.position;
             Vector3 camDisplacement = (mousePos - player.transform.position) * displacementMult;
             Vector3 newCamPos = player.transform.position + camDisplacement;
-            newCamPos.y = 10;
+            newCamPos.y = 15;
             transform.position = newCamPos;
         }
     }
