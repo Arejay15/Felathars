@@ -131,7 +131,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2c6fae525d684b40b19e79657baca51, type: 2}
+  - {fileID: 2100000, guid: 1a5c2eb574336334d93fa6b56a86bd99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -221,7 +221,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2c6fae525d684b40b19e79657baca51, type: 2}
+  - {fileID: 2100000, guid: 1a5c2eb574336334d93fa6b56a86bd99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -435,7 +435,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2c6fae525d684b40b19e79657baca51, type: 2}
+  - {fileID: 2100000, guid: 1a5c2eb574336334d93fa6b56a86bd99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -512,12 +512,12 @@ MonoBehaviour:
   model: {fileID: 4725415070033948113}
   agent: {fileID: 5421463413714812408}
   HP: 60
-  faceTargetSpeed: 7
-  bullet: {fileID: 42337391047625840, guid: 5461ffa19c309754fbf66ae9ae61e113, type: 3}
+  faceTargetSpeed: 4
+  bullet: {fileID: 8820050837950092576, guid: b36e349924b8b144d9d602658b918719, type: 3}
   gunPivot: {fileID: 5897978337932682179}
   shootPos: {fileID: 5429221966427437840}
-  shootRate: 0.75
-  gunRotateSpeed: 7
+  shootRate: 0.25
+  gunRotateSpeed: 10
 --- !u!135 &8478058435213413517
 SphereCollider:
   m_ObjectHideFlags: 0

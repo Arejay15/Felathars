@@ -5,14 +5,16 @@ public class BluePowerUp : MonoBehaviour
 {
 
     [SerializeField] GameObject powerUp;
+    private string hexColor = "#3187FF";
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
+       if(other.isTrigger) return;
 
-            gamemanager.instance.playerScript.damageReduction += .1f;
-            gamemanager.instance.playerReductionBar.gameObject.SetActive(true);
-            Destroy(powerUp);
+        gamemanager.instance.playerScript.damageReduction += 5;
+        if (ColorUtility.TryParseHtmlString(hexColor, out Color newColor))
+        {
+            gamemanager.instance.playerHPBar.color = newColor;
         }
+        Destroy(powerUp);
     }
 }

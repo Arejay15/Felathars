@@ -11,16 +11,14 @@ public class gamemanager : MonoBehaviour
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuClear;
     [SerializeField] GameObject menuLose;
+    [SerializeField] TMP_Text tempHPText;
     [SerializeField] TMP_Text gameGoalCountText;
 
 
     public Image playerHPBar;
-    public Image playerTempHPBar;
-    public Image playerReductionBar;
+    public Image playerTempHPIndicator;
     public Image whiteKey;
     public GameObject playerDamageFlash;
-    public GameObject yellowPowerOverlay;
-    public GameObject strengthUpOverlay;
 
     public bool isPaused;
     public GameObject player;
@@ -69,6 +67,20 @@ public class gamemanager : MonoBehaviour
         Time.timeScale = timeScaleOrig;
         menuActive.SetActive(false);
         menuActive = null;
+    }
+
+    public void updateTempHPIndicator(float tempHP)
+    {
+        tempHPText.text = tempHP.ToString("F0");
+
+        if(tempHP <= 0)
+        {
+            playerTempHPIndicator.gameObject.SetActive(false);
+        }
+    else
+        {
+            playerTempHPIndicator.gameObject.SetActive(true);
+        }
     }
 
     public void updateGameGoal(int amount)
