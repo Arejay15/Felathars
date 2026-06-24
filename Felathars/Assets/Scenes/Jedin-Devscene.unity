@@ -747,42 +747,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3911056751315664747, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3911056751315664747, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3911056751315664747, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: m_Acceleration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3911056751315664747, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3911056751315664747, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995663972858784261, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: HP
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995663972858784261, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: shootRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995663972858784261, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: gunRotateSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995663972858784261, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
-      propertyPath: faceTargetSpeed
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
