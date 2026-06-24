@@ -9392,11 +9392,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c31dda6adfdbb148861b907ce13a23c, type: 3}
---- !u!23 &1796683738 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 9028921263629609435, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-  m_PrefabInstance: {fileID: 1859726544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1803670143
 GameObject:
   m_ObjectHideFlags: 0
@@ -10030,37 +10025,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 826192463965561972, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204686882841703535, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: redGun
-      value: 
-      objectReference: {fileID: 11400000, guid: 6e1f138c57d9a5b4586d430a63e57c34, type: 2}
-    - target: {fileID: 1204686882841703535, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: blueGun
-      value: 
-      objectReference: {fileID: 11400000, guid: 07155dfa1cadca2459ebcb0727caa672, type: 2}
-    - target: {fileID: 1204686882841703535, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: greenGun
-      value: 
-      objectReference: {fileID: 11400000, guid: c9b6d45cb280c30419a819b59ad2f5cf, type: 2}
-    - target: {fileID: 1204686882841703535, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: gunModel
-      value: 
-      objectReference: {fileID: 1796683738}
-    - target: {fileID: 1204686882841703535, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: whiteGun
-      value: 
-      objectReference: {fileID: 11400000, guid: bd0def7f38a37fa4b98512ae170c396f, type: 2}
-    - target: {fileID: 1204686882841703535, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: yellowGun
-      value: 
-      objectReference: {fileID: 11400000, guid: 5e7a6e09373ef3f47aa567e36720bc51, type: 2}
-    - target: {fileID: 1204686882841703535, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
-      propertyPath: switchDelay
-      value: 0.1
+    - target: {fileID: 1598564866051050920, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
+      propertyPath: orthographic size
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 4931034110892938059, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
       propertyPath: m_Name

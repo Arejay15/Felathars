@@ -211,18 +211,19 @@ MonoBehaviour:
   HP: 100
   speed: 15
   sprintMod: 2
-  defensiveColor: 0
-  type: 0
-  shootRate: 0.5
-  damageAmount: 10
-  shootDist: 10
-  bullet: {fileID: 42337391047625840, guid: ade984ffdf9e4fe4aba48c78491dafa7, type: 3}
   shootPos: {fileID: 7965197454981277343}
   gunPivot: {fileID: 4868858004514753468}
+  gunModel: {fileID: 9028921263629609435}
+  switchDelay: 0.1
+  whiteGun: {fileID: 11400000, guid: bd0def7f38a37fa4b98512ae170c396f, type: 2}
+  redGun: {fileID: 11400000, guid: 6e1f138c57d9a5b4586d430a63e57c34, type: 2}
+  greenGun: {fileID: 11400000, guid: c9b6d45cb280c30419a819b59ad2f5cf, type: 2}
+  blueGun: {fileID: 11400000, guid: 07155dfa1cadca2459ebcb0727caa672, type: 2}
+  yellowGun: {fileID: 11400000, guid: 5e7a6e09373ef3f47aa567e36720bc51, type: 2}
+  fireRateBuff: 1
   damageReduction: 0
   originalHP: 0
   tempHP: 0
-  lookSens: 30
 --- !u!143 &6636825427839297799
 CharacterController:
   m_ObjectHideFlags: 0
@@ -396,7 +397,7 @@ Transform:
   m_GameObject: {fileID: 5070860920266752872}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -436,8 +437,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 90
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 8.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
