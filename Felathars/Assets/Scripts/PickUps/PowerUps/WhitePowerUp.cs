@@ -8,7 +8,6 @@ public class WhitePowerUp : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         gamemanager.instance.playerScript.fireRateBuff -= 0.5f;
-        gamemanager.instance.strengthUpOverlay.gameObject.SetActive(true);
         Destroy(powerUp);
     }
 }
