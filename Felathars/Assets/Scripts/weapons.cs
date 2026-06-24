@@ -1,29 +1,29 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class weapons : MonoBehaviour
+[CreateAssetMenu]
+
+public class weapons : ScriptableObject
 {
-   public enum weaponTypes {game, film, music, art, writing}
+    public enum Mode { Single, Burst, Spread }
+    [SerializeField] public Mode mode;
+    [SerializeField] public gamemanager.ColorType colorType;
+    [SerializeField, Range(0.1f, 3f)] public float fireRate;
+    [SerializeField] public GameObject bullet;
+    [SerializeField] public Color materialColor = Color.white;
+    [Header("If Burst")]
+    [SerializeField, Range(0.05f, 0.5f)] public float burstSpeed = 0.1f;
+    [Header("If Burst/Spread")]
+    [SerializeField, Range(2, 15)] public int shotNum;
+    [Header("If Spread")]
+    [SerializeField, Range(5, 45)] public int spreadAngle;
 
-    [SerializeField] weaponTypes type;
-    [SerializeField] float fireRate;
-    [SerializeField] int damage;
-    [Range(1,5)][SerializeField] int timeToDestroy;
-
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     
+
+
+
+
+
+
 }
