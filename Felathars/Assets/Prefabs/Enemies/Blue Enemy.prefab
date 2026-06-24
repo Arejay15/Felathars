@@ -478,12 +478,12 @@ MonoBehaviour:
   indicatorPrefab: {fileID: 6881490779329181580, guid: 5616dad97409f3f4fa674503682c7e5c, type: 3}
   model: {fileID: 2585358583020448701}
   agent: {fileID: 4611124212038807864}
-  HP: 25
+  HP: 40
   faceTargetSpeed: 5
-  bullet: {fileID: 5708153797088637581, guid: ff88a16858bd2a94a9182933840d81ae, type: 3}
+  bullet: {fileID: 8149928798584024459, guid: dc4343fdfcbd1674988f95891533516f, type: 3}
   gunPivot: {fileID: 5800055271688653627}
   shootPos: {fileID: 4430545322455356098}
-  shootRate: 0.5
+  shootRate: 2
   gunRotateSpeed: 5
 --- !u!135 &965957141367367131
 SphereCollider:
@@ -504,7 +504,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 15
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &4611124212038807864
 NavMeshAgent:

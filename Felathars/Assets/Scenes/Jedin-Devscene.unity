@@ -760,14 +760,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 415780799406206242, guid: ad1a0bb1ca00ac346884519631638ee9, type: 3}
-      propertyPath: HP
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 415780799406206242, guid: ad1a0bb1ca00ac346884519631638ee9, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 8820050837950092576, guid: b36e349924b8b144d9d602658b918719, type: 3}
     - target: {fileID: 6562145143753808785, guid: ad1a0bb1ca00ac346884519631638ee9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.2
@@ -812,10 +804,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 8393695697951243987, guid: ad1a0bb1ca00ac346884519631638ee9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -829,25 +817,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5399641823470040611, guid: af4aca2bda6fe8f4e8028055ff2b63f2, type: 3}
-      propertyPath: HP
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399641823470040611, guid: af4aca2bda6fe8f4e8028055ff2b63f2, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 5100068761715182046, guid: e54594e2829367a46a1cc0b09b33b2b0, type: 3}
-    - target: {fileID: 5399641823470040611, guid: af4aca2bda6fe8f4e8028055ff2b63f2, type: 3}
-      propertyPath: defensiveColor
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5546787786039553968, guid: af4aca2bda6fe8f4e8028055ff2b63f2, type: 3}
       propertyPath: m_Name
       value: Green Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546787786039553968, guid: af4aca2bda6fe8f4e8028055ff2b63f2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7752114440416806826, guid: af4aca2bda6fe8f4e8028055ff2b63f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1003,18 +975,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7926036496566111160, guid: 05abae13fedfba04a97bac91895c3236, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7981716403336708524, guid: 05abae13fedfba04a97bac91895c3236, type: 3}
-      propertyPath: HP
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7981716403336708524, guid: 05abae13fedfba04a97bac91895c3236, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 8149928798584024459, guid: dc4343fdfcbd1674988f95891533516f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

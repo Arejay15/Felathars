@@ -57,7 +57,7 @@ MonoBehaviour:
   bullet: {fileID: 42337391047625840, guid: 5461ffa19c309754fbf66ae9ae61e113, type: 3}
   gunPivot: {fileID: 4197716522621977366}
   shootPos: {fileID: 5620679355705080421}
-  shootRate: 2
+  shootRate: 1
   gunRotateSpeed: 1
 --- !u!135 &896009533140874672
 SphereCollider:
@@ -78,7 +78,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 15
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &3911056751315664747
 NavMeshAgent:
