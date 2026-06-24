@@ -23,7 +23,7 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] Transform shootPos;
     [SerializeField] Transform gunPivot;
 
-    public int damageReduction;
+    public float damageReduction;
     float shootTimer;
     public float originalHP;
     public float tempHP;
@@ -114,6 +114,7 @@ public class playerController : MonoBehaviour, IDamage
         else
         {
             HP -= (1.00f - damageReduction) * gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+
         }
         updatePlayerUI();
         StartCoroutine(flashDamage());
