@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class traps : MonoBehaviour, IDamage
+public class traps : MonoBehaviour
 {
     public enum trapType {mine, stun, smoke, laser}
     [SerializeField] trapType trap;
