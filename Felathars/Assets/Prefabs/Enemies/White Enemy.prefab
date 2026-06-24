@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   defensiveColor: 0
+  indicatorPrefab: {fileID: 6881490779329181580, guid: 5616dad97409f3f4fa674503682c7e5c, type: 3}
   model: {fileID: 3828568616867418683}
   agent: {fileID: 3911056751315664747}
   HP: 30

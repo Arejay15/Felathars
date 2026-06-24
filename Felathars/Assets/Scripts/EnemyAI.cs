@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Enemy stats
     [Header("Enemy Configuration")]
     [SerializeField] gamemanager.ColorType defensiveColor;
+    [SerializeField] private EnemyIndicator indicatorPrefab;
 
     [Header("Components")]
     [SerializeField] Renderer model;
@@ -36,6 +37,8 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     Transform playerTransform;
 
+    private EnemyIndicator indicator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +46,9 @@ public class EnemyAI : MonoBehaviour, IDamage
         colorOrig = model.material.color;
 
         gamemanager.instance.updateGameGoal(1);
+
+        indicator = Instantiate(indicatorPrefab, GameObject.Find("Canvas").transform);
+        indicator.Setup(transform, gamemanager.instance.player.transform);
 
         playerTransform = gamemanager.instance.player.transform;
 
@@ -138,6 +144,12 @@ public class EnemyAI : MonoBehaviour, IDamage
         if (HP <= 0)
         {
             gamemanager.instance.updateGameGoal(-1);
+
+            if (indicator != null)
+            {
+                Destroy(indicator.gameObject);
+            }
+
             Destroy(gameObject);
         }
         else

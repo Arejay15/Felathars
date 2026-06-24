@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyIndicator : MonoBehaviour
 {
-   [SerializeField] private GameObject locatedEnemy;
-   [SerializeField] private Transform player;
+   private Transform target;
+   private Transform player;
 
     private RectTransform pointerRectTransform;
 
@@ -14,8 +14,8 @@ public class EnemyIndicator : MonoBehaviour
 
     private void Update()
     {
-        if (locatedEnemy == null || player == null) return;
-        Vector3 targetPosition = locatedEnemy.transform.position;
+        if (target == null || player == null) return;
+        Vector3 targetPosition = target.position;
         Vector3 dir = (targetPosition - player.position).normalized;
         float angle = Mathf.Atan2(dir.z, dir.x) * Mathf.Rad2Deg;
         angle -= 90f;
@@ -42,5 +42,11 @@ public class EnemyIndicator : MonoBehaviour
             cappedTargetScreenPosition.y = Mathf.Clamp(cappedTargetScreenPosition.y, borderSize, Screen.height - borderSize);
             pointerRectTransform.position = cappedTargetScreenPosition;
         }
+    }
+
+    public void Setup(Transform target, Transform player)
+    {
+        this.target = target;
+        this.player = player;
     }
 }
