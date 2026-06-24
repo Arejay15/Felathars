@@ -17,6 +17,7 @@ public class RedPowerUp : MonoBehaviour
             {
                 player.HP = player.originalHP;
             }
+            player.updatePlayerUI();
         }
         Destroy(powerUp);
     }

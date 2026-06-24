@@ -174,6 +174,7 @@ public class playerController : MonoBehaviour, IDamage
         }
         updatePlayerUI();
         StartCoroutine(flashDamage());
+        gamemanager.instance.updateTempHPIndicator(tempHP);
 
         if (HP <= 0)
         {
@@ -185,8 +186,6 @@ public class playerController : MonoBehaviour, IDamage
     public void updatePlayerUI()
     {
         gamemanager.instance.playerHPBar.fillAmount = (float)HP / originalHP;
-        gamemanager.instance.playerReductionBar.fillAmount = (float)HP / originalHP;
-        gamemanager.instance.playerTempHPBar.fillAmount = (float)tempHP / originalHP;
     }
 
     public void shoot()

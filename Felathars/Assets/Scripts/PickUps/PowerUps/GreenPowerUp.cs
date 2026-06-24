@@ -8,8 +8,8 @@ public class GreenPowerUp : MonoBehaviour
         if (other.isTrigger) return;
 
         other.GetComponent<playerController>().tempHP += 20;
-        gamemanager.instance.playerTempHPBar.gameObject.SetActive(true);
-
+        gamemanager.instance.playerTempHPIndicator.gameObject.SetActive(true);
+        gamemanager.instance.updateTempHPIndicator(other.GetComponent<playerController>().tempHP);
         Destroy(powerUp);
     }
 }
