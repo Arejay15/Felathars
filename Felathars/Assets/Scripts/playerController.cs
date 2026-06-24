@@ -194,7 +194,7 @@ public class playerController : MonoBehaviour, IDamage
         shootTimer = 0;
         switch (activeGun.mode) {
             case weapons.Mode.Burst:
-                burstshot();
+                StartCoroutine(burstshot());
                 break;
             case weapons.Mode.Spread:
 
