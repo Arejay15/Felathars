@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.DebugUI.Table;
 
 public class playerController : MonoBehaviour, IDamage
@@ -120,7 +121,7 @@ public class playerController : MonoBehaviour, IDamage
         if (HP <= 0)
         {
             // Hey I'm Dead
-            gamemanager.instance.youLose();
+            SceneManager.LoadScene("GameOver");
         }
     }
 
