@@ -65,8 +65,8 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-    
-    
+
+
     void sprint()
     {
         if (Input.GetButtonDown("Sprint"))
