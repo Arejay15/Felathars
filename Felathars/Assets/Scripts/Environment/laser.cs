@@ -53,8 +53,4 @@ public class laser : MonoBehaviour
         yield return new WaitForSeconds(damageRate);
         isDamaging = false;
     }
-    public void Damage(int amount)
-    {
-        Destroy(gameObject);
-    }
 }
