@@ -299,7 +299,7 @@ MonoBehaviour:
   team: 1
   model: {fileID: 5139055898909834295}
   agent: {fileID: 7437113566778080077}
-  HP: 60
+  HP: 50
   faceTargetSpeed: 9
   mode: 1
   bullet: {fileID: 8149928798584024459, guid: dc4343fdfcbd1674988f95891533516f, type: 3}
@@ -308,7 +308,7 @@ MonoBehaviour:
   shootRate: 1.75
   gunRotateSpeed: 10
   burstSpeed: 0.1
-  shotNum: 8
+  shotNum: 5
   spreadAngle: 5
 --- !u!135 &3944750910231630450
 SphereCollider:

@@ -268,7 +268,7 @@ MonoBehaviour:
   team: 1
   model: {fileID: 6873509813046601206}
   agent: {fileID: 2705383157264268825}
-  HP: 40
+  HP: 30
   faceTargetSpeed: 10
   mode: 2
   bullet: {fileID: 5100068761715182046, guid: e54594e2829367a46a1cc0b09b33b2b0, type: 3}

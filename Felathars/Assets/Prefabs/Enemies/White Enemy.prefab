@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1509261273213725759}
   - component: {fileID: 4727894184372475838}
   - component: {fileID: 2817603146575723475}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8284508609605489011}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle White 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

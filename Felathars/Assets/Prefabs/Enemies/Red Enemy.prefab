@@ -143,7 +143,7 @@ MonoBehaviour:
   team: 1
   model: {fileID: 8610666709865477983}
   agent: {fileID: 2168821347708868984}
-  HP: 40
+  HP: 30
   faceTargetSpeed: 5
   mode: 0
   bullet: {fileID: 5708153797088637581, guid: ff88a16858bd2a94a9182933840d81ae, type: 3}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4095572828813133659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 6836429357540260375}
   - component: {fileID: 842951378933203350}
   - component: {fileID: 7868978513171082747}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

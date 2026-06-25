@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4397682960269905164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Star Yellow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 6561235396241797184}
   - component: {fileID: 1036693521009363905}
   - component: {fileID: 7558705762947917740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8393695697951243987}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.53, y: 0.69, z: -7.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
   team: 1
   model: {fileID: 4725415070033948113}
   agent: {fileID: 5421463413714812408}
-  HP: 30
+  HP: 40
   faceTargetSpeed: 4
   mode: 0
   bullet: {fileID: 8820050837950092576, guid: b36e349924b8b144d9d602658b918719, type: 3}

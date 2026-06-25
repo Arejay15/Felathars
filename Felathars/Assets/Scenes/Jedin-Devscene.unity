@@ -2440,6 +2440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4829368347662850823, guid: a06e190e9521b7445b0d160f9cb48685, type: 3}
+      propertyPath: ignoreLayer.m_Bits
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 6766837170828058548, guid: a06e190e9521b7445b0d160f9cb48685, type: 3}
       propertyPath: m_Name
       value: ALT White Enemy
@@ -2799,6 +2803,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3161710633053333628, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
+      propertyPath: ignoreLayer.m_Bits
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 3922670322132511829, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
       propertyPath: m_Name
       value: White Enemy
