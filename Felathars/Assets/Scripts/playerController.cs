@@ -89,6 +89,7 @@ public class playerController : MonoBehaviour, IDamage
             }
             gunModel.material.color = activeGun.materialColor;
             defensiveColor = activeGun.colorType;
+            shootRate = activeGun.fireRate;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -103,6 +104,7 @@ public class playerController : MonoBehaviour, IDamage
             }
             gunModel.material.color = activeGun.materialColor;
             defensiveColor = activeGun.colorType;
+            shootRate = activeGun.fireRate;
         }
     }
 
