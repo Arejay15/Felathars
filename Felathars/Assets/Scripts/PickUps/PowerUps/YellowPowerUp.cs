@@ -6,11 +6,13 @@ public class YellowPowerUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.isTrigger) return;
+        if (other.CompareTag("Player"))
+        {
 
-        gamemanager.instance.playerScript.speed += 5;
-        gamemanager.instance.player.GetComponent<TrailRenderer>().enabled = true;
-        Destroy(powerUp);
+            gamemanager.instance.playerScript.speed += 5;
+            gamemanager.instance.player.GetComponent<TrailRenderer>().enabled = true;
+            Destroy(powerUp);
+        }
     }
 
 }
