@@ -9,6 +9,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     [Header("Enemy Configuration")]
     [SerializeField] gamemanager.ColorType defensiveColor;
     [SerializeField] private EnemyIndicator indicatorPrefab;
+    [SerializeField] public int team = 1;
+    public int Team => team;
 
     [Header("Components")]
     [SerializeField] Renderer model;

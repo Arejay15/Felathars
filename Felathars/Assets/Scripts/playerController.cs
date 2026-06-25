@@ -14,7 +14,9 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField, Range(25f, 250f)] public float HP;
     [SerializeField, Range(5, 50)] public int speed;
     [SerializeField, Range(1.1f, 3f)] public float sprintMod;
-    
+    [SerializeField] public int team = 0;
+    public int Team => team;
+
     [SerializeField] Transform shootPos;
     [SerializeField] Transform gunPivot;
     [SerializeField] Renderer gunModel;
@@ -37,7 +39,7 @@ public class playerController : MonoBehaviour, IDamage
     float shootTimer;
     public float originalHP;
     public float tempHP;
-    public bool isStunned = true;
+    public bool isStunned = false;
 
     public Vector3 moveDir;
 

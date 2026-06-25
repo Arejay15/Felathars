@@ -3,6 +3,7 @@ using UnityEngine;
 public class damage : MonoBehaviour
 {
     [SerializeField] LayerMask ignoreLayer;
+    [SerializeField] int team;
 
     [SerializeField] gamemanager.ColorType dmgColor;
     [SerializeField] Rigidbody rb;
@@ -30,11 +31,15 @@ public class damage : MonoBehaviour
         if (other.isTrigger || other.gameObject.layer == ignoreLayer) return;
 
         IDamage dmg = other.GetComponent<IDamage>();
-        
-        if (dmg != null)
+
+        if (dmg != null && dmg.Team != team)
         {
             dmg.takeDamage(damageAmount, dmgColor);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else if (dmg == null)
+        {
+            Destroy(gameObject);
+        }
     }
 }

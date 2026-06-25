@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a751923108f582047a587958b58ed247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  doorModel: {fileID: 0}
+  doorModel: {fileID: 2364299139746076362}
   doorButton: {fileID: 0}
   Locked: 0
   hasKey: 0
@@ -140,6 +140,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 346c5191034058f439f95ad1e51cd463, type: 3}
+--- !u!1 &2364299139746076362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175133158085282432, guid: 346c5191034058f439f95ad1e51cd463, type: 3}
+  m_PrefabInstance: {fileID: 8466159723303623754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7839963417515541014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1851245911421296220, guid: 346c5191034058f439f95ad1e51cd463, type: 3}
