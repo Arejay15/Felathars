@@ -52,7 +52,7 @@ MonoBehaviour:
     m_Bits: 1408
   dmgColor: 0
   rb: {fileID: 3493907745711771745}
-  damageAmount: 3.5
+  damageAmount: 15
   damageRate: 0.25
   bulletSpeed: 15
   bulletDestroyTime: 2
