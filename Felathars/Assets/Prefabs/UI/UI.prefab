@@ -3468,6 +3468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1231134065394777459}
   - component: {fileID: 1273003847669882673}
+  - component: {fileID: 2183547197929041050}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3512,9 +3513,32 @@ MonoBehaviour:
   playerTempHPIndicator: {fileID: 4898299807928358793}
   whiteKey: {fileID: 394498342218327942}
   playerDamageFlash: {fileID: 1404164341420624150}
+  weaponUI: {fileID: 2183547197929041050}
   isPaused: 0
   player: {fileID: 0}
   playerScript: {fileID: 0}
+--- !u!114 &2183547197929041050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6040313655810991062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55bb3842f5b1ad449d68e815dd5ab74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponUIController
+  whiteIcon: {fileID: 1913404013821417143}
+  redIcon: {fileID: 5742836035880632141}
+  greenIcon: {fileID: 836495461286935658}
+  blueIcon: {fileID: 5325225533081294754}
+  yellowIcon: {fileID: 460370735257078435}
+  whiteSelected: {fileID: 2292665580516280647}
+  redSelected: {fileID: 2731280962012427456}
+  greenSelected: {fileID: 8664506249954478144}
+  blueSelected: {fileID: 7205783680595581643}
+  yellowSelected: {fileID: 6221828569803793370}
 --- !u!1 &6221828569803793370
 GameObject:
   m_ObjectHideFlags: 0
