@@ -20,15 +20,15 @@ public class playerDash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dashCooldown -= Time.deltaTime;
-        
-        if (Input.GetButton("Jump"))
-        {
-            if (dashCooldown <= 0)
+            dashCooldown -= Time.deltaTime;
+
+            if (Input.GetButton("Jump"))
             {
-                StartCoroutine(Dash());
+                if (dashCooldown <= 0)
+                {
+                    StartCoroutine(Dash());
+                }
             }
-        }
     }
 
     IEnumerator Dash() {
