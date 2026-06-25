@@ -13,7 +13,7 @@ public class WhitePowerUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             cursorImage.sprite = upgradeSprite;
-            gamemanager.instance.playerScript.fireRateBuff += 0.25f;
+            gamemanager.instance.playerScript.fireRateBuff -= 0.25f;
             Destroy(powerUp);
         }
     }

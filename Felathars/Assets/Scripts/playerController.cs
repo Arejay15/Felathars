@@ -178,7 +178,8 @@ public class playerController : MonoBehaviour, IDamage
     {
         if(tempHP != 0)
         {
-            tempHP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+            float dmg = gamemanager.damageCalc(amount, dmgColor, defensiveColor) - damageReduction;
+            tempHP -= dmg;
             if (tempHP < 0)
             {
                 HP += tempHP;
@@ -187,7 +188,8 @@ public class playerController : MonoBehaviour, IDamage
         }
         else
         {
-            HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
+            float dmg = gamemanager.damageCalc(amount, dmgColor, defensiveColor) - damageReduction;
+            HP -= dmg;
         }
         updatePlayerUI();
         StartCoroutine(flashDamage());

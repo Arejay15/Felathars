@@ -17,6 +17,6 @@ MonoBehaviour:
   fireRate: 0.95
   bullet: {fileID: 8149928798584024459, guid: 45d53781109834b4a8587b09ee70ab7e, type: 3}
   materialColor: {r: 0, g: 0.58763933, b: 1, a: 1}
-  burstSpeed: 0.15
+  burstSpeed: 0.1
   shotNum: 3
   spreadAngle: 5

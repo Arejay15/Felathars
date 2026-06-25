@@ -53,7 +53,7 @@ MonoBehaviour:
   team: 0
   dmgColor: 4
   rb: {fileID: 3493907745711771745}
-  damageAmount: 15
+  damageAmount: 10
   damageRate: 0.25
   bulletSpeed: 30
   bulletDestroyTime: 3

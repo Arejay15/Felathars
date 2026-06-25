@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::weapons
   mode: 0
   colorType: 4
-  fireRate: 1.5
+  fireRate: 0.75
   bullet: {fileID: 8820050837950092576, guid: 503c2a004011853438d2f34713effef0, type: 3}
   materialColor: {r: 1, g: 0.9648272, b: 0, a: 1}
   burstSpeed: 0.05

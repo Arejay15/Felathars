@@ -479,6 +479,7 @@ MonoBehaviour:
   defensiveColor: 2
   indicatorPrefab: {fileID: 6881490779329181580, guid: 5616dad97409f3f4fa674503682c7e5c, type: 3}
   team: 1
+  debugging: 0
   model: {fileID: 5551317893430782298}
   agent: {fileID: 2731050965030132487}
   HP: 50
