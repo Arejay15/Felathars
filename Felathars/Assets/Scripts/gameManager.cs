@@ -19,6 +19,7 @@ public class gamemanager : MonoBehaviour
     public Image playerTempHPIndicator;
     public Image whiteKey;
     public GameObject playerDamageFlash;
+    public WeaponUIController weaponUI;
 
     public bool isPaused;
     public GameObject player;

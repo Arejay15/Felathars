@@ -58,6 +58,14 @@ public class playerController : MonoBehaviour, IDamage
         shootRate = activeGun.fireRate;
         defensiveColor = activeGun.colorType;
 
+        gamemanager.instance.weaponUI.SetWeaponUnlocked(gamemanager.ColorType.WHITE, whiteGun != null);
+        gamemanager.instance.weaponUI.SetWeaponUnlocked(gamemanager.ColorType.RED, redGun != null);
+        gamemanager.instance.weaponUI.SetWeaponUnlocked(gamemanager.ColorType.GREEN, greenGun != null);
+        gamemanager.instance.weaponUI.SetWeaponUnlocked(gamemanager.ColorType.BLUE, blueGun != null);
+        gamemanager.instance.weaponUI.SetWeaponUnlocked(gamemanager.ColorType.YELLOW, yellowGun != null);
+
+        gamemanager.instance.weaponUI.SetSelectedWeapon(activeGun.colorType);
+
         updatePlayerUI();
     }
 
@@ -89,6 +97,7 @@ public class playerController : MonoBehaviour, IDamage
             }
             gunModel.material.color = activeGun.materialColor;
             defensiveColor = activeGun.colorType;
+            gamemanager.instance.weaponUI.SetSelectedWeapon(activeGun.colorType);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -103,6 +112,7 @@ public class playerController : MonoBehaviour, IDamage
             }
             gunModel.material.color = activeGun.materialColor;
             defensiveColor = activeGun.colorType;
+            gamemanager.instance.weaponUI.SetSelectedWeapon(activeGun.colorType);
         }
     }
 
