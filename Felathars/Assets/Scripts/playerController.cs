@@ -37,6 +37,7 @@ public class playerController : MonoBehaviour, IDamage
     float shootTimer;
     public float originalHP;
     public float tempHP;
+    public bool isStunned = true;
 
     public Vector3 moveDir;
 
@@ -66,7 +67,10 @@ public class playerController : MonoBehaviour, IDamage
     {
         lookatmouse();
 
-        movement();
+        if (!isStunned)
+        {
+            movement();
+        }
 
         selectGun();
 
@@ -109,17 +113,16 @@ public class playerController : MonoBehaviour, IDamage
     void movement()
     {
         shootTimer += Time.deltaTime;
+            moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
+            controller.Move(moveDir * speed * Time.deltaTime);
+            Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
 
-        moveDir = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
-        controller.Move(moveDir * speed * Time.deltaTime); 
-        Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward * 10, Color.red);
 
-        
 
-        if (Input.GetButton("Fire1") && shootTimer > shootRate)
-        {
-            shoot();
-        }
+            if (Input.GetButton("Fire1") && shootTimer > shootRate)
+            {
+                shoot();
+            }
     }
 
     
@@ -230,6 +233,12 @@ public class playerController : MonoBehaviour, IDamage
         gamemanager.instance.playerDamageFlash.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gamemanager.instance.playerDamageFlash.SetActive(false);
+    }
+    public IEnumerator stun()
+    {
+        isStunned = true;
+        yield return new WaitForSeconds(2f);
+        isStunned = false;
     }
 }
 
