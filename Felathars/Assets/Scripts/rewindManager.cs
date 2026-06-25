@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 
 public class rewindManager : MonoBehaviour
@@ -21,11 +22,13 @@ public class rewindManager : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.F)) {
-            StartRewindAll();
+            StartCoroutine(beanback());
         }
-        if (Input.GetKeyUp(KeyCode.F)){
-            StopRewindAll();
-        }
-    
+    }
+
+    IEnumerator beanback() {
+        StartRewindAll();
+        yield return new WaitForSeconds(5);
+        StopRewindAll();
     }
 }
