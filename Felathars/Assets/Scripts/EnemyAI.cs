@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        if (playerInTrigger && canSeePlayer())
+        if (playerInTrigger)
         {
             
             agent.SetDestination(gamemanager.instance.player.transform.position);
@@ -74,7 +74,7 @@ public class EnemyAI : MonoBehaviour, IDamage
             faceTarget();
             rotateGun();
 
-            if (shootTimer > shootRate)
+            if (canSeePlayer() && shootTimer > shootRate)
             {
                 shoot();
             }
