@@ -53,10 +53,10 @@ MonoBehaviour:
   team: 1
   dmgColor: 1
   rb: {fileID: 7785668519648061134}
-  damageAmount: 7.5
+  damageAmount: 5
   damageRate: 0.1
-  bulletSpeed: 10
-  bulletDestroyTime: 3
+  bulletSpeed: 20
+  bulletDestroyTime: 2
 --- !u!135 &7590431305559600124
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -171,6 +171,15 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

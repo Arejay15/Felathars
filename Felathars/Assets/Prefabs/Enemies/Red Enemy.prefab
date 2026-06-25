@@ -140,15 +140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   defensiveColor: 1
   indicatorPrefab: {fileID: 6881490779329181580, guid: 5616dad97409f3f4fa674503682c7e5c, type: 3}
+  team: 1
   model: {fileID: 8610666709865477983}
   agent: {fileID: 2168821347708868984}
-  HP: 40
-  faceTargetSpeed: 1
+  HP: 30
+  faceTargetSpeed: 5
+  mode: 0
   bullet: {fileID: 5708153797088637581, guid: ff88a16858bd2a94a9182933840d81ae, type: 3}
   gunPivot: {fileID: 4951138845053044618}
   shootPos: {fileID: 1295193533344017999}
-  shootRate: 0.35
-  gunRotateSpeed: 1
+  shootRate: 0.4
+  gunRotateSpeed: 5
+  burstSpeed: 0.1
+  shotNum: 2
+  spreadAngle: 5
 --- !u!135 &1180857893354124583
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -168,7 +173,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 30
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &2168821347708868984
 NavMeshAgent:
@@ -180,10 +185,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
-  m_Acceleration: 10
+  m_Speed: 4
+  m_Acceleration: 5
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 90
   m_StoppingDistance: 7
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -255,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4095572828813133659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +327,7 @@ GameObject:
   - component: {fileID: 6836429357540260375}
   - component: {fileID: 842951378933203350}
   - component: {fileID: 7868978513171082747}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

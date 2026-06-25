@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4397682960269905164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Star Yellow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 6561235396241797184}
   - component: {fileID: 1036693521009363905}
   - component: {fileID: 7558705762947917740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8393695697951243987}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.53, y: 0.69, z: -7.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -509,15 +509,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   defensiveColor: 4
   indicatorPrefab: {fileID: 6881490779329181580, guid: 5616dad97409f3f4fa674503682c7e5c, type: 3}
+  team: 1
   model: {fileID: 4725415070033948113}
   agent: {fileID: 5421463413714812408}
-  HP: 70
-  faceTargetSpeed: 10
+  HP: 40
+  faceTargetSpeed: 4
+  mode: 0
   bullet: {fileID: 8820050837950092576, guid: b36e349924b8b144d9d602658b918719, type: 3}
   gunPivot: {fileID: 5897978337932682179}
   shootPos: {fileID: 5429221966427437840}
-  shootRate: 0.1
+  shootRate: 0.8
   gunRotateSpeed: 10
+  burstSpeed: 0.1
+  shotNum: 2
+  spreadAngle: 5
 --- !u!135 &8478058435213413517
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -537,7 +542,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 40
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &5421463413714812408
 NavMeshAgent:
@@ -549,8 +554,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6
-  m_Acceleration: 8
+  m_Speed: 4
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 5
