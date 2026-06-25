@@ -10,6 +10,12 @@ public class Door : MonoBehaviour
 
     public bool hasKey = false;
 
+    private void Start()
+    {
+        doorButton.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !Locked)
