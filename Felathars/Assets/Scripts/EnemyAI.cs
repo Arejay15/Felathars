@@ -179,6 +179,15 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     public void takeDamage(float amount, gamemanager.ColorType dmgColor)
     {
+
+        if (playerInTrigger)
+        {
+
+            agent.SetDestination(gamemanager.instance.player.transform.position);
+
+        }
+
+
         HP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
 
         if (HP <= 0)
