@@ -16,15 +16,22 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     [Header("Stats")]
     [SerializeField] float HP;
-    [Range(1, 10), SerializeField] int faceTargetSpeed;
-    
+    [Range(1, 10), SerializeField] int faceTargetSpeed; 
+
 
     [Header("Weapon")]
+    [SerializeField] weapons.Mode mode;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gunPivot;
     [SerializeField] Transform shootPos;
     [Range(0.1f, 2f), SerializeField] float shootRate;
     [Range(1, 10), SerializeField] int gunRotateSpeed;
+    [Header("If Burst")]
+    [SerializeField, Range(0.05f, 0.5f)] public float burstSpeed = 0.1f;
+    [Header("If Burst/Spread")]
+    [SerializeField, Range(2, 15)] public int shotNum;
+    [Header("If Spread")]
+    [SerializeField, Range(5, 45)] public int spreadAngle;
 
     Color colorOrig;
 
@@ -103,12 +110,43 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     }
 
-    void shoot()
+    public void shoot()
     {
         shootTimer = 0;
-        Instantiate(bullet, shootPos.position, gunPivot.rotation);
+        switch (mode)
+        {
+            case weapons.Mode.Burst:
+                StartCoroutine(burstshot());
+                break;
+            case weapons.Mode.Spread:
+
+                float gap = spreadAngle / (shotNum - 1);
+                float startAngle = -spreadAngle / 2f;
+
+                for (int i = 0; i < shotNum; i++)
+                {
+                    float angle = startAngle + gap * i;
+                    Quaternion rotation = gunPivot.rotation * Quaternion.Euler(0f, angle, 0f);
+                    Instantiate(bullet, shootPos.position, rotation);
+                }
+
+                break;
+            default:
+
+                Instantiate(bullet, shootPos.position, gunPivot.rotation);
+                break;
+        }
     }
 
+    IEnumerator burstshot()
+    {
+        Instantiate(bullet, shootPos.position, gunPivot.rotation);
+        for (int i = shotNum - 1; i > 0; i--)
+        {
+            yield return new WaitForSeconds(burstSpeed);
+            Instantiate(bullet, shootPos.position, gunPivot.rotation);
+        }
+    }
     void faceTarget()
     {
         Quaternion rot = Quaternion.LookRotation(new Vector3(playerDir.x, 0, playerDir.z));
