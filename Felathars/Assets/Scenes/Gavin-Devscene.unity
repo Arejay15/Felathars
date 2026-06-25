@@ -1356,14 +1356,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
-      propertyPath: menuLose
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
-      propertyPath: yellowPowerOverlay
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1763851168011889917, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -536,6 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::cameraController
   displacementMult: 0.15
+  maxDist: 5
 --- !u!1 &6366110969787334904
 GameObject:
   m_ObjectHideFlags: 0

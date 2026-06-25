@@ -146,7 +146,7 @@ RectTransform:
   m_GameObject: {fileID: 27728513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1591441019}
@@ -154,7 +154,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -111}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 809, y: 148}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27728515
 MonoBehaviour:
@@ -169,14 +169,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.009747148, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2966246c12d7d3345bff0a0fbc3710d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0fce49fba66b8a4b86253de12fe5511, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -364,11 +364,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
       propertyPath: menuLose
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
       propertyPath: menuPause
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: tempHPText
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
@@ -393,6 +401,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
       propertyPath: yellowPowerOverlay
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273003847669882673, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: playerTempHPIndicator
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1404164341420624150, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
