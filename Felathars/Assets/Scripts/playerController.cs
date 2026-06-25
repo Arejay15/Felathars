@@ -133,7 +133,7 @@ public class playerController : MonoBehaviour, IDamage
 
 
 
-            if (Input.GetButton("Fire1") && shootTimer > shootRate)
+            if (Input.GetButton("Fire1") && shootTimer > shootRate * fireRateBuff)
             {
                 shoot();
             }
@@ -181,7 +181,7 @@ public class playerController : MonoBehaviour, IDamage
             tempHP -= gamemanager.damageCalc(amount, dmgColor, defensiveColor);
             if (tempHP < 0)
             {
-                HP -= tempHP;
+                HP += tempHP;
                 tempHP = 0;
             }
         }

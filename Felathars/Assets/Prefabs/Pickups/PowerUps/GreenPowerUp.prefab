@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2d ring target 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1121595934213346, guid: 82c68b9b6d997904595a4936de1f3633, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4993818631787360, guid: 82c68b9b6d997904595a4936de1f3633, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -82,6 +86,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3884996327737853352, guid: bf15c16b263e3804588bf461aa338918, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6252296881136304841, guid: bf15c16b263e3804588bf461aa338918, type: 3}
       propertyPath: m_LocalScale.x
       value: 20
@@ -96,15 +104,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6252296881136304841, guid: bf15c16b263e3804588bf461aa338918, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.891356
+      value: 23.541355
       objectReference: {fileID: 0}
     - target: {fileID: 6252296881136304841, guid: bf15c16b263e3804588bf461aa338918, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0063500064
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6252296881136304841, guid: bf15c16b263e3804588bf461aa338918, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.7586362
+      value: -24.643562
       objectReference: {fileID: 0}
     - target: {fileID: 6252296881136304841, guid: bf15c16b263e3804588bf461aa338918, type: 3}
       propertyPath: m_LocalRotation.w
@@ -137,6 +145,10 @@ PrefabInstance:
     - target: {fileID: 6741693271574698099, guid: bf15c16b263e3804588bf461aa338918, type: 3}
       propertyPath: m_Name
       value: GreenPowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741693271574698099, guid: bf15c16b263e3804588bf461aa338918, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -189,7 +201,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &8993966422268766077 stripped
 Transform:

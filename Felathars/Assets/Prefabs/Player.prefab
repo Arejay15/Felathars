@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.9, z: 0}
-  m_LocalScale: {x: 3.85, y: 1, z: 2.17}
+  m_LocalScale: {x: 2.9818964, y: 1, z: 1.6786252}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6009262324776103726}
@@ -245,6 +245,7 @@ MonoBehaviour:
   HP: 100
   speed: 15
   sprintMod: 2
+  team: 0
   shootPos: {fileID: 7965197454981277343}
   gunPivot: {fileID: 4868858004514753468}
   gunModel: {fileID: 9028921263629609435}
@@ -253,7 +254,7 @@ MonoBehaviour:
   redGun: {fileID: 11400000, guid: 6e1f138c57d9a5b4586d430a63e57c34, type: 2}
   greenGun: {fileID: 11400000, guid: c9b6d45cb280c30419a819b59ad2f5cf, type: 2}
   blueGun: {fileID: 11400000, guid: 07155dfa1cadca2459ebcb0727caa672, type: 2}
-  yellowGun: {fileID: 11400000, guid: 5e7a6e09373ef3f47aa567e36720bc51, type: 2}
+  yellowGun: {fileID: 0}
   fireRateBuff: 1
   damageReduction: 0
   originalHP: 0
@@ -505,7 +506,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 1023
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

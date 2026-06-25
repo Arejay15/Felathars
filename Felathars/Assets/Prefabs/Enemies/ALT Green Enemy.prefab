@@ -478,15 +478,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   defensiveColor: 2
   indicatorPrefab: {fileID: 6881490779329181580, guid: 5616dad97409f3f4fa674503682c7e5c, type: 3}
+  team: 1
   model: {fileID: 5551317893430782298}
   agent: {fileID: 2731050965030132487}
   HP: 50
   faceTargetSpeed: 2
+  mode: 0
   bullet: {fileID: 5100068761715182046, guid: e54594e2829367a46a1cc0b09b33b2b0, type: 3}
   gunPivot: {fileID: 8938959352115567113}
   shootPos: {fileID: 1055351199263910689}
   shootRate: 1.2
   gunRotateSpeed: 10
+  burstSpeed: 0.1
+  shotNum: 2
+  spreadAngle: 5
 --- !u!135 &7115847846008504460
 SphereCollider:
   m_ObjectHideFlags: 0

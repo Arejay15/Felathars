@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2870847555482285113, guid: 021e9c7d6b6bb9240b1750a1606759be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9663115
+      value: 36.397808
       objectReference: {fileID: 0}
     - target: {fileID: 2870847555482285113, guid: 021e9c7d6b6bb9240b1750a1606759be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0063500064
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2870847555482285113, guid: 021e9c7d6b6bb9240b1750a1606759be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.7577748
+      value: 27.189701
       objectReference: {fileID: 0}
     - target: {fileID: 2870847555482285113, guid: 021e9c7d6b6bb9240b1750a1606759be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 3214615795269217923, guid: 021e9c7d6b6bb9240b1750a1606759be, type: 3}
       propertyPath: m_Name
       value: YellowPowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214615795269217923, guid: 021e9c7d6b6bb9240b1750a1606759be, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970168404200354648, guid: 021e9c7d6b6bb9240b1750a1606759be, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -115,7 +123,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &7614629188255443444 stripped
 Transform:
@@ -133,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 1121595934213346, guid: 82c68b9b6d997904595a4936de1f3633, type: 3}
       propertyPath: m_Name
       value: 2d ring target 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121595934213346, guid: 82c68b9b6d997904595a4936de1f3633, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4993818631787360, guid: 82c68b9b6d997904595a4936de1f3633, type: 3}
       propertyPath: m_LocalScale.x

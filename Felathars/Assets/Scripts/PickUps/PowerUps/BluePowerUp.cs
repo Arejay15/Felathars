@@ -8,13 +8,15 @@ public class BluePowerUp : MonoBehaviour
     private string hexColor = "#3187FF";
     private void OnTriggerEnter(Collider other)
     {
-       if(other.isTrigger) return;
-
-        gamemanager.instance.playerScript.damageReduction += 5;
-        if (ColorUtility.TryParseHtmlString(hexColor, out Color newColor))
+        if (other.CompareTag("Player"))
         {
-            gamemanager.instance.playerHPBar.color = newColor;
+
+            gamemanager.instance.playerScript.damageReduction += 5;
+            if (ColorUtility.TryParseHtmlString(hexColor, out Color newColor))
+            {
+                gamemanager.instance.playerHPBar.color = newColor;
+            }
+            Destroy(powerUp);
         }
-        Destroy(powerUp);
     }
 }
