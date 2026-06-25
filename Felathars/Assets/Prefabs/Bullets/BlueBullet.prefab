@@ -54,8 +54,8 @@ MonoBehaviour:
   rb: {fileID: 6815225901952575511}
   damageAmount: 20
   damageRate: 2
-  bulletSpeed: 1
-  bulletDestroyTime: 3
+  bulletSpeed: 3
+  bulletDestroyTime: 12
 --- !u!135 &8357147077974589913
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -85,7 +85,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8149928798584024459}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 125
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

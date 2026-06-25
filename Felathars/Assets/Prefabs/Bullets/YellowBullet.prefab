@@ -52,10 +52,10 @@ MonoBehaviour:
     m_Bits: 1408
   dmgColor: 0
   rb: {fileID: 3493907745711771745}
-  damageAmount: 0.5
+  damageAmount: 15
   damageRate: 0.25
-  bulletSpeed: 1
-  bulletDestroyTime: 3
+  bulletSpeed: 15
+  bulletDestroyTime: 2
 --- !u!135 &4504252090334932790
 SphereCollider:
   m_ObjectHideFlags: 0
