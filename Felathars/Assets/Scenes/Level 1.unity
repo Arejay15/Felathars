@@ -5571,6 +5571,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1851245911421296220, guid: 346c5191034058f439f95ad1e51cd463, type: 3}
   m_PrefabInstance: {fileID: 740193083}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &754152900 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8760665200054716323, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
+  m_PrefabInstance: {fileID: 3858649588619727520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &776750328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9829,6 +9834,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 7923959084918397383, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: nextScene
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184621445198320230, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 754152900}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

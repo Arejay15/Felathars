@@ -3550,6 +3550,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 7923959084918397383, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: nextScene
+      value: Level 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184621445198320230, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 1514670533}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9839,6 +9847,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
+--- !u!4 &1514670533 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8760665200054716323, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
+  m_PrefabInstance: {fileID: 1514670532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1522223338
 PrefabInstance:
   m_ObjectHideFlags: 0

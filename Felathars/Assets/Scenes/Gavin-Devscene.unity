@@ -524,6 +524,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8993966422268766077, guid: 15f5f1b76baebd243a048cf7794fa749, type: 3}
   m_PrefabInstance: {fileID: 516432646}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &580786737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4950050303624686951, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+  m_PrefabInstance: {fileID: 2860500349330617171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!4 &686457388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4257585286283320722, guid: 827267f8b990c3f45a40a6ac32dd76a2, type: 3}
@@ -1176,6 +1187,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1985916520}
     m_Modifications:
+    - target: {fileID: 2080010019420852580, guid: c63014e850304ab419057f4cdab2f949, type: 3}
+      propertyPath: cursorImage
+      value: 
+      objectReference: {fileID: 580786737}
     - target: {fileID: 2710501171301034722, guid: c63014e850304ab419057f4cdab2f949, type: 3}
       propertyPath: m_Name
       value: WhitePowerUp
@@ -1220,15 +1235,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4192663047894156699, guid: c63014e850304ab419057f4cdab2f949, type: 3}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c63014e850304ab419057f4cdab2f949, type: 3}
+--- !u!4 &1870487360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8760665200054716323, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
+  m_PrefabInstance: {fileID: 1225365021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1985916519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 9184621445198320230, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 1870487360}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

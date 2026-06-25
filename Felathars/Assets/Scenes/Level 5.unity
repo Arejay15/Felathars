@@ -14601,6 +14601,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
+--- !u!4 &1392600400 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8760665200054716323, guid: f44dfd4d49c8c4f459ccb2974767ded2, type: 3}
+  m_PrefabInstance: {fileID: 1392600399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1393583140 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3192952168159203875, guid: e11dcc7f8631b2a46bc00074bf09270b, type: 3}
@@ -17875,6 +17880,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7923959084918397383, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: nextScene
+      value: WinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184621445198320230, guid: a15a8e7c47fe9fb4d93cdc8e3de56974, type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 1392600400}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
