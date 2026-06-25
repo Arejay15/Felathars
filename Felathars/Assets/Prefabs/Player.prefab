@@ -240,6 +240,7 @@ MonoBehaviour:
   damageReduction: 0
   originalHP: 0
   tempHP: 0
+  isStunned: 0
   moveDir: {x: 0, y: 0, z: 0}
 --- !u!143 &6636825427839297799
 CharacterController:

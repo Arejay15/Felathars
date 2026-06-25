@@ -100,15 +100,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926454806403729600, guid: 83706abe45c934e4c95a052ba52f9c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.913584
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1926454806403729600, guid: 83706abe45c934e4c95a052ba52f9c53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0063500023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1926454806403729600, guid: 83706abe45c934e4c95a052ba52f9c53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.824976
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1926454806403729600, guid: 83706abe45c934e4c95a052ba52f9c53, type: 3}
       propertyPath: m_LocalRotation.w
@@ -120,11 +120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926454806403729600, guid: 83706abe45c934e4c95a052ba52f9c53, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1926454806403729600, guid: 83706abe45c934e4c95a052ba52f9c53, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1926454806403729600, guid: 83706abe45c934e4c95a052ba52f9c53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WhitePowerUp
   powerUp: {fileID: 2710501171301034722}
+  cursorImage: {fileID: 0}
+  upgradeSprite: {fileID: 21300000, guid: 90eafeadcb872594d82eb86e4b5c9fe7, type: 3}
 --- !u!135 &4192663047894156699
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &3375011246223781976 stripped
 Transform:

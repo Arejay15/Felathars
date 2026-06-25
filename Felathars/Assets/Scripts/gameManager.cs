@@ -13,6 +13,7 @@ public class gamemanager : MonoBehaviour
     [SerializeField] GameObject menuLose;
     [SerializeField] TMP_Text tempHPText;
     [SerializeField] TMP_Text gameGoalCountText;
+    [SerializeField] GameObject customCursor;
 
 
     public Image playerHPBar;
@@ -20,6 +21,7 @@ public class gamemanager : MonoBehaviour
     public Image whiteKey;
     public GameObject playerDamageFlash;
     public WeaponUIController weaponUI;
+    public Image cursorImage;
 
     public bool isPaused;
     public GameObject player;
@@ -63,6 +65,7 @@ public class gamemanager : MonoBehaviour
     public void statePause()
     {
         isPaused = true;
+        customCursor.SetActive(false);
         Time.timeScale = 0;
     }
 
@@ -71,6 +74,7 @@ public class gamemanager : MonoBehaviour
         isPaused = false;
         Time.timeScale = timeScaleOrig;
         menuActive.SetActive(false);
+        customCursor.SetActive(true);
         menuActive = null;
     }
 
@@ -99,6 +103,7 @@ public class gamemanager : MonoBehaviour
             statePause();
             menuActive = menuClear;
             menuActive.SetActive(true);
+            customCursor.SetActive(false);
         }
     }
 
@@ -107,6 +112,7 @@ public class gamemanager : MonoBehaviour
         statePause();
         menuActive = menuLose;
         menuActive.SetActive(true);
+        customCursor.SetActive(false);
     }
 
     public enum ColorType { WHITE, RED, GREEN, BLUE, YELLOW, TRUE }
