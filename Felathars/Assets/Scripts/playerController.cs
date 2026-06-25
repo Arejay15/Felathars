@@ -195,6 +195,7 @@ public class playerController : MonoBehaviour, IDamage
         {
             // Hey I'm Dead
             SceneManager.LoadScene("GameOver");
+            Cursor.visible = true;
         }
     }
 

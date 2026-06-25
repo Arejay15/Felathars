@@ -104,6 +104,7 @@ public class gamemanager : MonoBehaviour
             menuActive = menuClear;
             menuActive.SetActive(true);
             customCursor.SetActive(false);
+            Cursor.visible = true;
         }
     }
 
