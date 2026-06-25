@@ -53,10 +53,10 @@ MonoBehaviour:
   team: 1
   dmgColor: 3
   rb: {fileID: 6815225901952575511}
-  damageAmount: 20
+  damageAmount: 8
   damageRate: 2
-  bulletSpeed: 3
-  bulletDestroyTime: 12
+  bulletSpeed: 15
+  bulletDestroyTime: 2
 --- !u!135 &8357147077974589913
 SphereCollider:
   m_ObjectHideFlags: 0
