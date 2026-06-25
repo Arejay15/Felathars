@@ -163,10 +163,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009262324776103726}
+  - component: {fileID: 4321309280298636771}
   - component: {fileID: 4929490090425627666}
   - component: {fileID: 1204686882841703535}
   - component: {fileID: 6636825427839297799}
   - component: {fileID: 2226193803723135813}
+  - component: {fileID: 2245190700848401648}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -187,11 +189,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8006905644136172701}
   - {fileID: 899857753799856965}
   - {fileID: 826192463965561972}
   - {fileID: 8760665200054716323}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4321309280298636771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931034110892938059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bbea4107fb7a54b961bc4bf18bd81d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::rewindObject
+  player: {fileID: 1204686882841703535}
+  recordTime: 5
+  rb: {fileID: 2245190700848401648}
 --- !u!114 &4929490090425627666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +404,33 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!54 &2245190700848401648
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931034110892938059}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5070860920266752872
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +673,50 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8676813878535249187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8006905644136172701}
+  - component: {fileID: 7309097523817829427}
+  m_Layer: 0
+  m_Name: rewindManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8006905644136172701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676813878535249187}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.1952286, y: -1.01, z: 7.30995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6009262324776103726}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7309097523817829427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676813878535249187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c0c649f0a69f641accf64d17f9650f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::rewindManager
 --- !u!1 &8681040739315179121
 GameObject:
   m_ObjectHideFlags: 0

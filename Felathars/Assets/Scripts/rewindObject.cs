@@ -7,20 +7,17 @@ using Unity.VisualScripting;
 public class rewindObject : MonoBehaviour
 {
     private bool isRewinding = false;
-    private Rigidbody rb;
     private List<TransformData> history = new List<TransformData>();
+    [SerializeField] playerController player;
     [SerializeField] private float recordTime = 5f;
+    [SerializeField] Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb.GetComponent<Rigidbody>();
-        rewindManager.Register(this);
-    }
-
-    void OnDestroy()
-    {
-        rewindManager.Unregister(this);    
+        player.GetComponent<playerController>();
+        rewindManager.rewindObject = this;
     }
 
     private void FixedUpdate()
@@ -34,7 +31,7 @@ public class rewindObject : MonoBehaviour
         {
             history.RemoveAt(history.Count - 1);
         }
-        history.Insert(0, new TransformData(transform.position, transform.rotation));
+        history.Insert(0, new TransformData(transform.position, transform.rotation, player.HP, player.tempHP));
     }
 
     void Rewind() {
@@ -42,6 +39,8 @@ public class rewindObject : MonoBehaviour
             TransformData data = history[0];
             transform.position = data.position;
             transform.rotation = data.rotation;
+            player.HP = data.pastHealth;
+            player.tempHP = data.pastTemp;
             history.RemoveAt(0);
         }
     }
@@ -58,10 +57,14 @@ public class rewindObject : MonoBehaviour
     private struct TransformData {
         public Vector3 position;
         public Quaternion rotation;
-
-        public TransformData(Vector3 pos, Quaternion rot) {
+        public float pastHealth;
+        public float pastTemp;
+        public TransformData(Vector3 pos, Quaternion rot, float hp, float temphp) {
             position = pos;
             rotation = rot;
+            pastHealth = hp;
+            pastTemp = temphp;
+
         }
     }
 }

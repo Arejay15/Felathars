@@ -3,35 +3,27 @@ using UnityEngine;
 
 public class rewindManager : MonoBehaviour
 {
-    private static List<rewindObject> rewindObjects = new List<rewindObject>();
+    public static rewindObject rewindObject;
     private static bool isRewinding = false;
-    public static void Register(rewindObject obj) {
-        if (!rewindObjects.contains(obj)) rewindObjects.Add(obj);
-    }
+  
 
-    public static void Unregister(rewindObject obj) {
-        rewindObjects.Remove(obj);
-    }
 
     public void StartRewindAll() {
         isRewinding = true;
-        foreach (var obj in rewindObjects) {
-            obj.StartRewind();
-        }
+        rewindObject.StartRewind();
     }
 
     public void StopRewindAll() {
         isRewinding = false;
-        foreach (var obj in rewindObjects) {
-            obj.StopRewind();
-        }
+        rewindObject.StopRewind();
+   
     }
 
     void Update() {
-        if (Input.GetButtonDown("Beanback")) {
+        if (Input.GetKeyDown(KeyCode.F)) {
             StartRewindAll();
         }
-        if (Input.GetButtonUp("Beanback")){
+        if (Input.GetKeyUp(KeyCode.F)){
             StopRewindAll();
         }
     
