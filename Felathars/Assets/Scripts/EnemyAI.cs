@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] gamemanager.ColorType defensiveColor;
     [SerializeField] private EnemyIndicator indicatorPrefab;
     [SerializeField] public int team = 1;
+    [SerializeField] bool debugging = false;
     public int Team => team;
 
     [Header("Components")]
@@ -68,15 +69,11 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         if (playerInTrigger)
         {
-            
-            agent.SetDestination(gamemanager.instance.player.transform.position);
 
-            faceTarget();
-            rotateGun();
-
-            if (canSeePlayer() && shootTimer > shootRate)
+            if (canSeePlayer())
             {
-                shoot();
+                faceTarget();
+                rotateGun();
             }
 
         }
@@ -102,8 +99,20 @@ public class EnemyAI : MonoBehaviour, IDamage
             if (hit.collider.CompareTag("Player"))
             {
 
+               
+
+                agent.SetDestination(gamemanager.instance.player.transform.position);
+                if (shootTimer > shootRate)
+                {
+                    shoot();
+                }
+                
                 return true;
 
+            }
+            else if (debugging)
+            {
+                Debug.Log(hit.collider.name);
             }
 
         }
