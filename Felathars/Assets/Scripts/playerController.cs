@@ -9,7 +9,7 @@ public class playerController : MonoBehaviour, IDamage
 {
     [SerializeField] LayerMask ignoreLayer;
 
-    [SerializeField] CharacterController controller;
+    [SerializeField] public CharacterController controller;
     [SerializeField] GameObject playerModel;
     [SerializeField, Range(25f, 250f)] public float HP;
     [SerializeField, Range(5, 50)] public int speed;
@@ -38,7 +38,7 @@ public class playerController : MonoBehaviour, IDamage
     public float originalHP;
     public float tempHP;
 
-    Vector3 moveDir;
+    public Vector3 moveDir;
 
     int lookSens = 30;
 
