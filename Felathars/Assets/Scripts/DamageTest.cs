@@ -2,26 +2,31 @@ using UnityEngine;
 
 public class DamageTest : MonoBehaviour
 {
+    [Header("White Bullet")]
     [SerializeField] float W_W = 10;
     [SerializeField] float W_R = 10;
     [SerializeField] float W_G = 10;
     [SerializeField] float W_B = 10;
     [SerializeField] float W_Y = 10;
+    [Header("Red Bullet")]
     [SerializeField] float R_W = 10;
     [SerializeField] float R_R = 10;
     [SerializeField] float R_G = 10;
     [SerializeField] float R_B = 10;
     [SerializeField] float R_Y = 10;
+    [Header("Green Bullet")]
     [SerializeField] float G_W = 10;
     [SerializeField] float G_R = 10;
     [SerializeField] float G_G = 10;
     [SerializeField] float G_B = 10;
     [SerializeField] float G_Y = 10;
+    [Header("Blue Bullet")]
     [SerializeField] float B_W = 10;
     [SerializeField] float B_R = 10;
     [SerializeField] float B_G = 10;
     [SerializeField] float B_B = 10;
     [SerializeField] float B_Y = 10;
+    [Header("Yellow Bullet")]
     [SerializeField] float Y_W = 10;
     [SerializeField] float Y_R = 10;
     [SerializeField] float Y_G = 10;
