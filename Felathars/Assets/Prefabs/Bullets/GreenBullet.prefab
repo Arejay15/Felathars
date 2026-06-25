@@ -50,7 +50,7 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 1408
-  dmgColor: 0
+  dmgColor: 2
   rb: {fileID: 5547976092747983148}
   damageAmount: 12
   damageRate: 7

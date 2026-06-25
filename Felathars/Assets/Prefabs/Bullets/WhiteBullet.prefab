@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::damage
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1408
   dmgColor: 0
   rb: {fileID: 8657497348089136774}
   damageAmount: 10
